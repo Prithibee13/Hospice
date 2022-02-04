@@ -1,0 +1,422 @@
+.navbar {
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 1.5em;
+    background: #ffffff; 
+  }
+  
+  .navbar-brand
+  {
+    color: #000000 ;
+  }
+  
+  .nav-link {
+    color: #000000 ;
+    letter-spacing: 0.4px;
+    margin: 0 1.6em;
+    padding: 0.6em;
+  }
+  
+  .nav-link.active,
+  .nav-link:hover {
+    color:  #0d6efd !important;
+  }
+  
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  .navbar-expand-lg .navbar-nav .nav-link.contact 
+  {
+    padding: 0.6em 0.8em 2em;
+  }
+
+  .reg-form .form-field
+{
+    position: relative;
+    margin: 32px 0;
+}
+
+
+.reg-form .input-text
+{
+    width: 100%;
+    display: block;
+    height: 36px;
+    border-width: 0 0 2px 0;
+    border-color: #5543ca;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+.reg-form .input-text:focus
+{
+    outline: none;
+}
+
+
+#onen .reg-form .btn
+{
+    background-color: #f4524d;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 16px;
+    padding: 8px 16px;
+    width: 20em;
+}
+
+
+#onen .reg-form .btn
+{
+    background-color: #5543ca;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 16px;
+    padding: 8px 16px;
+    width: 20em;
+}
+
+#onen
+{
+    max-width: 800px;
+    margin: 50px auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: relative;
+    box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
+    padding: 30px;
+
+}
+
+#onen .title
+{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3em;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #5543ca;
+    background: linear-gradient(to right, #5543ca 0%, #f4524d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#onen
+{
+    max-width: 800px;
+    margin: 50px auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: relative;
+    box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
+    padding: 30px;
+
+}
+
+
+
+#onend
+{
+    max-width: 800px;
+    margin: 50px auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: relative;
+    box-shadow: 0 10px 30px 0px rgba(0,0,0,0.1);
+    padding: 30px;
+
+}
+
+#onen .title
+{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3em;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #5543ca;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#onend .title
+{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 3em;
+    line-height: 48px;
+    padding-bottom: 20px;
+    color: #5543ca;
+    background: linear-gradient(to right, #f4524d 0%, #5543ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.site-footer
+{
+    background: #171819;
+    margin-top: 10%;
+    padding: 7em 0 6em 0;
+}
+
+.site-footer a
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.site-footer a:hover
+{
+  color: #F7882F;
+  text-decoration: none;
+}
+
+
+
+
+.site-footer .office-list li
+{
+  list-style: none;
+}
+
+.site-footer .footer-link li
+{
+  list-style: none;
+}
+
+.site-footer .footer-link li 
+{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.copyright-text,
+  .footer-link,
+  .site-footer .social-icon{
+    margin-top: 6em;
+  }
+
+.copyright-text
+{
+  margin-top: 5.3em;
+}
+
+.site-footer .social-icon li 
+{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icon {
+  position: relative;
+  padding: 0;
+  margin: 4em 0 0 0;
+}
+
+
+
+.copyright-text
+{
+  font-size: 18px;
+}
+
+.designer
+{
+  font-size: 18px;
+}
+
+
+.email,
+.avi,
+.hed,
+.cnt,
+.phn
+{
+    color: #ffffff;
+}
+
+
+.cover
+{
+  background: url(images/rahat_bg_banner.png) no-repeat;
+  width: 100%;
+  height: 100vh;
+}
+
+.email:hover,
+.avi:hover,
+.hed:hover,
+.cnt:hover,
+.phn:hover
+{
+  color: #F7882F;
+}
+
+.designer:hover
+{
+  color: #F7882F;
+}
+
+
+.copyright-text:hover
+{
+    color: #F7882F;
+}
+
+.address
+{
+  margin-top: 20%;
+  margin-bottom: 10%;
+}
+
+
+#linkm1
+{
+  color: #ffffff !important; 
+}
+
+
+#linkm1:hover
+{
+  text-decoration: none !important;
+ text-decoration: none;
+}
+
+
+#linkm2
+{
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+#linkm2:hover
+{
+  text-decoration: none;
+}
+
+button a 
+{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button a :hover
+{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+
+/*#dlog
+{
+  margin-top: 20%;
+}*/
+
+
+#schedule
+{
+  margin-top: 20%;
+}
+
+.sec-btn
+{
+  margin-top: 20%;
+}
+
+#col1
+{
+  margin-top: 20%;
+}
+
+
+.login
+{
+  margin-top: 20%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://media.istockphoto.com/photos/modern-keyboard-wih-blue-log-in-button-picture-id638149354?b=1&k=20&m=638149354&s=170667a&w=0&h=K_dd1EuWBMmyU0A5IN4igEUROFozhvtj7CtJ0GswHLE=") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 50vh;
+}
+
+
+.appointment
+{
+  margin-top: 20%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 50vh;
+}
+
+
+.sch-btn
+{
+  margin-top: 20%;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://images.unsplash.com/photo-1435527173128-983b87201f4d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1167&q=80") no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 50vh;
+}
+
+
+#mid
+{
+  margin-top: 20%;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8)), url("https://media.istockphoto.com/photos/empty-modern-hospital-corridor-picture-id1294129593?b=1&k=20&m=1294129593&s=170667a&w=0&h=ec9llv8HzmWqJQNyzNXyU7JqWgVzTctlEVOX8MQsV94=") no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 50vh; */
+}
+
+#third
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGhvc3BpdGFsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60") no-repeat;
+  background-attachment: fixed;
+  background-size:cover;
+  background-position:center;
+  position: relative;
+  height: 100vh;
+}
+
+.main-sections
+{
+  margin-top: 20%;
+}
+
+
+.card a
+{
+  text-decoration: none;
+}
+
+.card a:hover
+{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#department-header
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('images/pix-3.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+}
+
+
+
+

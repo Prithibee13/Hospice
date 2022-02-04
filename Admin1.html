@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+    <head>
+        <script src="Schedule.js"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="Styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <section>
+            <section class="mt-10 mb-10 fg" id="onen">
+                <h1 class="title text-center">Set Schedule</h1>
+                <div class="container">
+                    <div class="row reg-form mx-auto text-center">
+                            <div class="form-field col-lg-6">
+                                <input type="Date" class ="input-text" placeholder="Date"  id="date" required/>
+                            </div>
+                            <div class="form-field col-lg-6">
+                                <input type="time" class ="input-text"  placeholder="Time" id="time" required/>
+                            </div>
+                            <div class="form-field col-lg-6">
+                                <input type="number" class ="input-text" id="doc_id" placeholder="" value=1021 disabled/>
+                            </div>
+                            <div class="form-field mx-auto text-white col-lg-12">
+                                <button class="btn" onclick="Scm2();">Set Date</button>
+                             </div>
+    
+                    </div>
+                </div>
+            </section>  
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-12 mx-auto">
+                        <table class="table table-striped table-borderless">
+                            <thead>
+                                <tr>
+                                    <th>Sl No.</th>
+                                    <th>Patient Id</th>  
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                    <th>Mobile</th>
+                                </td>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                   <td id="Name1"></td>
+                                   <td id="Age1"></td>
+                                   <td id="gen1"></td>
+                                   <td id="mobile1"></td> 
+                                </tr>
+            
+                                
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="Name2"></td>
+                                    <td id="Age2"></td>
+                                    <td id="gen2"></td>
+                                    <td id="mobile2"></td> 
+                                 </tr>
+            
+                                 
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td id="Name3"></td>
+                                    <td id="Age3"></td>
+                                    <td id="gen3"></td>
+                                    <td id="mobile3"></td> 
+                                 </tr>
+                            </tbody>
+                    </table>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </section>
+
+
+        <section>
+            <footer class="site-footer" data-aos="fade-up">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 mx-lg-auto col-md-8 col-10 text-center">
+                            <h1 class="hed" data-aos="fade-up" data-aos-delay="100"><img src="./images/pix1.png" width="50px" height="50px">Doctor's Care</h1>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="my-4  cnt">Contact Info</h4>
+                
+                            <p class="phn" data-aos="fade-up" data-aos-delay="300">
+                                <span ><i class="far fa-phone fa-2x mr-2 footer-icon"></i></span> 
+                              +99 080 070 4224
+                            </p>
+                
+                            <p class="email" data-aos-delay="400" data-aos="fade-up">
+                              <span><i class="far fa-envelope fa-2x mr-2 footer-icon"></i></span>
+                                test@test.com
+                            </p>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
+                            <h4 class="my-4 avi">We are Avilable At</h4>
+                
+                            <p class="mb-1" data-aos="fade-up" data-aos-delay="300">
+                                <ul class="office-list">
+                                    <li data-aos-delay="350" data-aos="fade-up" class="mb-2"><span class="text-primary"><i class="far fa-search-location fa-2x mr-2"></i><a id="a1" href="Office.html">OFFICE</a></span></li>
+                                    <li data-aos-delay="400" data-aos="fade-up" class="mb-2"><span class="text-success"><i class="far fa-location-arrow fa-2x mr-2"></i><a id="a2" href="Chamber1.html">Chamber#1</a></span></li>
+                                    <li data-aos-delay="450" data-aos="fade-up"><span class="text-danger"><i class="far fa-compass fa-2x mr-2"></i><a id="a3" href="Chamber2.html">Chamber#2</a></span></li>
+                                </ul>
+                            </p>
+                          </div>
+                
+                          <div class="col-lg-4 mx-lg-auto text-white col-md-8 col-12 text-center" data-aos="fade-up" data-aos-delay="200">
+                            <p class="copyright-text" data-aos="fade-up" data-aos-delay="300">Copyright &copy; Charles Kenton 2021</p>
+                            <p class="designer" data-aos="fade-up" data-aos-delay="350">Designer : <span class="text-info"><i class="fas fa-house-user fa-2x"></i></span>Aziz-Prithibee</p>
+                            <br>
+                          </div>
+                          
+                            <div class="col-lg-3 col-md-6 col-12 text-white" data-aos="fade-up" data-aos-delay="300">
+                                <p>
+                                    <ul class="footer-link">
+                                        <li data-aos="fade-up" data-aos-delay="100"><a href="#">Story</a></li>
+                                        <li data-aos="fade-up" data-aos-delay="200"><a href="#">Works</a></li>
+                                        <li data-aos="fade-up" data-aos-delay="300"><a href="#">Papers</a></li>
+                                    </ul> 
+                                </p>
+                        </div>
+                        <div class="col-lg-3 col-md-6 col-12 text-white">
+                            <p>
+                                <ul class="social-icon">
+                                    <li data-aos="fade-right" data-aos-delay="300">
+                                        <span class="text-primary"><a href="" class="fab fa-facebook fa-2x"></a></span>
+                                    </li>
+                                    <li data-aos="fade-up" data-aos-delay="350">
+                                        <span class="text-danger"><a href="" class="fab fa-github fa-2x"></a></span>
+                                    </li>
+                                    <li data-aos="fade-left" data-aos-delay="400"><span class="text-success"><a href="" class="fab fa-linkedin-in fa-2x"></a></span></li>
+                                </ul>
+                            </p>
+                    </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </body>
+
+</html>
