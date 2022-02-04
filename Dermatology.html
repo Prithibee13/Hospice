@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Styles.css">
-    <title>Gynocology</title>
+    <title>Dermatology</title>
 </head>
 <body>
 
@@ -49,7 +49,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-title mb-5">
-                                    <h2 class="text-center m-3" id="M1"></h2>
+                                    <h2 class="text-center m-3" id="D1"></h2>
+                                    <h3 id="deg1"></h3>
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb-5">
                                             <div class="card">
@@ -99,7 +100,8 @@
                         <div class="card"> 
                             <div class="card-body">
                                 <div class="card-title mb-5">
-                                    <h2 id="M2" class="text-center m-3"></h2>
+                                    <h2 id="D2" class="text-center m-3"></h2>
+                                    <h3 id="deg2"></h3>
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb-5">
                                             <div class="card">
@@ -146,7 +148,23 @@
         </div>
     </section>
 
+<script>
+    fetch("Funct11.php")
+        .then(function(response)
+        {
+            return response.json();
+        })
+        .then(function(data)
+        {
+            console.log(data);
+            
+            document.getElementById("D1").innerHTML = data[0].Doctor_Name;
+            document.getElementById("D2").innerHTML = data[1].Doctor_Name;
 
+            document.getElementById("deg1").innerHTML = data[0].Doctor_Education;
+            document.getElementById("deg2").innerHTML = data[1].Doctor_Education;
+        });
+</script>
     
 </body>
 </html>

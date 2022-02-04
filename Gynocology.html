@@ -49,7 +49,8 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="card-title mb-5">
-                                    <h2 class="text-center m-3" id="M1"></h2>
+                                    <h2 class="text-center m-3" id="G1"></h2>
+                                    <h3 id="deg1"></h3>
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb-5">
                                             <div class="card">
@@ -99,7 +100,8 @@
                         <div class="card"> 
                             <div class="card-body">
                                 <div class="card-title mb-5">
-                                    <h2 id="M2" class="text-center m-3"></h2>
+                                    <h2 id="G2" class="text-center m-3"></h2>
+                                    <h3 id="deg2"></h3>
                                     <div class="row">
                                         <div class="col-md-6 col-12 mb-5">
                                             <div class="card">
@@ -145,6 +147,25 @@
             </div>
         </div>
     </section>
+
+
+    <script>
+        fetch("Funct12.php")
+        .then(function(response)
+        {
+            return response.json();
+        })
+        .then(function(data)
+        {
+            console.log(data);
+            
+            document.getElementById("G1").innerHTML = data[0].Doctor_Name;
+            document.getElementById("G2").innerHTML = data[1].Doctor_Name;
+
+            document.getElementById("deg1").innerHTML = data[0].Doctor_Education;
+            document.getElementById("deg2").innerHTML = data[1].Doctor_Education;
+        });
+    </script>
 
 
     
