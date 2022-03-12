@@ -40,126 +40,75 @@
 
     <section>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-12 mb-5"> 
-                    <img class="img-fluid w-100" src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg"/>
-                </div>
-                <div class="col-md-6 col-12 mb-5">
-                    <div class="">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="card-title mb-5">
-                                    <h2 class="text-center m-3" id="C1"></h2>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <i class="fal text-primary fa-database fa-2x mb-2"></i>
-                                                    <h3 class="p-2">Total Patient</h3>
-                                                    <h3 class="p-2">8346437236</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3 class="p-2">Patient on Next Schedule</h3>
-                                                    <h3 class="p-2">8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3>This Month</h3>
-                                                    <h3>8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3>This year</h3>
-                                                    <h3>8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-btn m-5 text-center text-white">
-                                        <button class="btn btn-primary text-white"><a id="linkm1" href="Medicine1.html">View Website</a></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12 mb-5">
-                    <div class="text-center">
-                        <div class="card"> 
-                            <div class="card-body">
-                                <div class="card-title mb-5">
-                                    <h2 id="C2" class="text-center m-3"></h2>
-                                    <div class="row">
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3>8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3>8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3>8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 col-12 mb-5">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h3>8346437</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card-btn m-5">
-                                        <button class="btn btn-primary"> <a id="linkm2" href="Medicine2.html">View Website</a></button>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 mb-5">
-                    <img src="https://cdn.pixabay.com/photo/2016/02/08/23/36/isolated-1188036__480.png" class="w-100 img-fluid h-100"/>
-                </div>
-            </div>
+            <div class="row row-cols-1 row-cols-md-2 g-5" id="doctors-card"></div>
         </div>
+              
     </section>
 
 
     <script>
-        fetch("Funct10.php")
-        .then(function(response)
+
+        const getDoctor = () =>
         {
-            return response.json();
-        })
-        .then(function(data)
+
+            fetch("Funct10.php")
+            .then(function(response)
+            {
+                return response.json();
+            })
+            .then(function(data)
+            {
+                console.log(data);
+                displayData(data)
+                
+            });
+        }
+
+        getDoctor();
+        
+        const displayData = (doctors) =>
         {
-            console.log(data);
+            let row = document.getElementById("doctors-card");
             
-            document.getElementById("C1").innerHTML = data[0].Doctor_Name;
-            document.getElementById("C2").innerHTML = data[1].Doctor_Name;
-        });
+            let i = 0;
+            doctors.forEach(doctor => 
+            {
+                console.log(doctor);
+                const { Doctor_Name , Doctor_Education } = doctor;
+                const cardArticle = document.createElement("article");
+                const div = cardMaker(Doctor_Name , Doctor_Education , i);
+                cardArticle.innerHTML = `${div}`;
+                i++;
+
+                row.append(cardArticle);
+                
+            });
+        
+        
+    }
+    
+    const cardMaker = (name , education , i) =>
+    {
+    
+        let img =["https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg" , "https://cdn.pixabay.com/photo/2016/02/08/23/36/isolated-1188036__480.png"]
+        let path = "medicine" + (i + 1) + ".html";
+    
+        const card = `
+        
+                    <div class="col">
+                      <div class="card h-100">
+                        <img src="${img[i]}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h2 class="card-title text-center">${name}</h2>
+                          <h4>${education}</h4>
+                            
+                          <a href="${path}" class="btn btn-primary">View Website</a>
+                        </div>
+                      </div>
+                    </div>
+                    `
+         return card;           
+    }
     </script>
 </body>
 </html>

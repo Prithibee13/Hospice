@@ -43,72 +43,67 @@
 
 
         <section>
-            <div class="px-4 py-5 my-5 text-center">
-                <h1 class="">Departments of MEDICINE</h1>
-                <div class="col-lg-6 mx-auto">
-                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium obcaecati dolorum rerum blanditiis mollitia, reiciendis eius, aut cupiditate officia, exercitationem voluptatem sint totam quos libero voluptatibus consequuntur natus suscipit.</p>
-                  </div>
+            <div class="container">
+                <div class="row g-5 d-flex justify-content-center align-items-center">
+                    <div class="col-md-6 col-2">
+                        <h1 id="M1"></h1>
+                    </div>
+                    <div class="col-md-6 col-2">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="">
+                    </div>
+                </div>
             </div>
         </section>
 
         <section>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-12 mb-5"> 
-                        <img  class = "w-100" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60"/>
-                    </div>
-                    <div class="col-md-6 col-12 mb-5">
-                        <div class="">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="card-title mb-5">
-                                        <h2 class="text-center m-3" id="M1"></h2>
-                                        <div class="row">
-                                            <div class="col-md-6 col-12 mb-5">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <i class="fal text-primary fa-database fa-2x mb-2"></i>
-                                                        <p class="p-2">Total Patient</p>
-                                                        <p class="p-2">8346437236</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12 mb-5">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <p class="p-2">Patient on Next Schedule</p>
-                                                        <p class="p-2">8346437</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12 mb-5">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <p>This Month</p>
-                                                        <p>8346437</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-12 mb-5">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <p>This year</p>
-                                                        <p>8346437</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="container">
-                                            <div class="row">
-                                                
-                                            </div>
-                                        </div>
-                                        
-                                    </div>
-                                </div>
+                <div class="row row-cols-1 row-cols-md-4 g-5">
+                    <div class="col shadow-lg">
+                        <div class="card h-100 border-0">
+                            <div class="card-body ">
+                              <h2 class="card-title">Doctor Log-in</h2>
+                              <p class="card-text lead">Log in As Doctor/Admin of Department of Medicine</p>
+                              <button class="btn btn-primary text-white" onclick="show1()">Login</button>
+                              
                             </div>
-                        </div>
+                          </div>
                     </div>
+                    <div class="col shadow-lg">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                              <h2 class="card-title">Set an Appointment</h2>
+                              <p class="card-text lead">Register a patient.</p>
+                              <button class="btn btn-primary text-white" onclick="reg1()">Set Appointment</button>
+                              
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col shadow-lg">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                              <h2 class="card-title">Registration Updates</h2>
+                              
+                              <p class="card-text">Visit the details of upcoming appointment</p>
+                              <a href="#" class="card-link">Card link</a>
+                              <a href="#" class="card-link">Another link</a>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col shadow-lg">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                              <h2 class="card-title">Doctor Schedule</h2>
+                              <p class="card-text">Visit doctor's Recent schedules , availability.</p>
+                              <a href="#" class="card-link">Card link</a>
+                              <a href="#" class="card-link">Another link</a>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            
+
+
     
         </section>
 
@@ -119,23 +114,22 @@
         <div class="px-4 py-5 my-5 text-center text-white">
             <h3 class="">Log-in as Doctor</h3>
             <div class="col-lg-6 mx-auto mt-5">
-                <button class="btn btn-primary text-white" onclick="show1()">Login</button>
               </div>
         </div>
     </section>
 
     <section class="appointment">
         <div class="px-4 py-5 my-5 text-center text-white">
-            <h3 class="">Set an Appointment</h3>
+            <h3 class=""></h3>
             <div class="col-lg-6 mx-auto mt-5">
-                <button class="btn btn-primary text-white" onclick="reg1()">Set Appointment</button>
+               
               </div>
         </div>
     </section>
 
     <section class="sch-btn">
         <div class="px-4 py-5 my-5 text-center text-white">
-            <h3 class="">Doctor Schedule</h3>
+            <h3 class=""></h3>
             <div class="col-lg-6 mx-auto mt-5">
                 <button class="btn btn-primary text-white" onclick="show1()">View Schedule</button>
               </div>
