@@ -4,17 +4,20 @@ $requst = file_get_contents("php://input");
 
 $obj = json_decode($requst);
 
-$Date = $obj -> Date;
-$Time = $obj -> Time;
-$Doctor_id = $obj -> Doctor_id;
 
+$date = $obj -> Date;
+$time = $obj -> Time;
+$doctor_id = $obj -> Doctor_id;
 
+var_dump($date);
+var_dump($time);
+var_dump($doctor_id);
 
 
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "our Clinic";
+$dbname = "our Clinic 2";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,7 +27,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "INSERT INTO schedule (Doctor_id , Date, Time) VALUES ('$Doctor_id','$Date','$Time');";
+$sql = "INSERT INTO doctor_availability (Available_Day , Available_Time, Doctor_id) VALUES ('$date','$time','$doctor_id');";
 
 
 if($conn -> query($sql) === TRUE)

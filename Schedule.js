@@ -1,6 +1,6 @@
 const Scm2 = () =>
 {
-    let Scedule =
+    let Schedule =
     {
         Date : "",
         Time : "",
@@ -10,11 +10,12 @@ const Scm2 = () =>
     
 
 
-    Scedule.Date = document.getElementById("date").value;
-    Scedule.Time = document.getElementById("time").value;
-    Scedule.Doctor_id = document.getElementById("doc_id").value;
-    let json = JSON.stringify(Scedule);
-    console.log(json); 
+    Schedule.Date = document.getElementById("date").value;
+    Schedule.Time = document.getElementById("time").value;
+    Schedule.Doctor_id = document.getElementById("doc_id").value;
+
+    
+    let json = JSON.stringify(Schedule); 
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "Funct6.php");
     xhr.setRequestHeader("Content-Type", "applicatopn/json")
