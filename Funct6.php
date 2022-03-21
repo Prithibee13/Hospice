@@ -8,6 +8,7 @@ $obj = json_decode($requst);
 $date = $obj -> Date;
 $time = $obj -> Time;
 $doctor_id = $obj -> Doctor_id;
+$capacity = $obj -> Capacity;
 
 var_dump($date);
 var_dump($time);
@@ -27,7 +28,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "INSERT INTO doctor_availability (Available_Day , Available_Time, Doctor_id) VALUES ('$date','$time','$doctor_id');";
+$sql = "INSERT INTO doctor_availability (Available_Day , Available_Time, Doctor_id , Maximum_Appointment_Capacity) VALUES ('$date','$time','$doctor_id', '$capacity');";
 
 
 if($conn -> query($sql) === TRUE)

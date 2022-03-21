@@ -1,3 +1,28 @@
+
+
+
+
+const countPatient = () =>
+{
+    fetch('Funct15.php')
+    .then(res => res.json())
+    .then(data => idMaker(data))
+}
+
+
+
+
+
+const idMaker = (number) =>
+{
+    const { Number } =  number[0];
+
+    console.log(Number);
+}
+countPatient()
+
+
+
 const Reg = () =>
 {
     //event.preventDefault();
@@ -30,16 +55,14 @@ const Reg = () =>
 
 
     
-    const detailesJson = JSON.stringify(Patients);
+ /*    const detailesJson = JSON.stringify(Patients);
     console.log(detailesJson);
 
     
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "Funct3.php");
     xhr.setRequestHeader("Content-Type", "applicatopn/json")
-    xhr.send(detailesJson);
-
-
+    xhr.send(detailesJson); */
 
 }
 

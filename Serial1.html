@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <head>
-        <script src="p.js"></script>
+        <script src="Serial.js"></script>
         <script src="control.js"></script>
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -47,7 +47,7 @@
                         </div>
                         
                         <div class="form-field mx-auto text-white col-lg-12">
-                           <button class="btn" onclick="Reg();">Register</button>
+                           <button class="btn reg-btn" onclick="Reg();">Register</button>
                         </div> 
         
                         
@@ -73,34 +73,6 @@
         
     </body>
     <script>
-                    
-        fetch("Funct7.php")
-        .then(function(response)
-        {
-            return response.json();
-        })
-        .then(function(data)
-        {
-            console.log(data);
-            
-            const count = Object.keys(data).length;
-            let i;
-            for( i = 1; i<=count ; i = i+1)
-            {
-                document.getElementById(i.toString()).innerHTML = data[i-1].Date;
-            }
-
-            
-            //document.getElementById("2").innerHTML = data[1].Date;
-            //document.getElementById("3").innerHTML = data[2].Date;
-
-
-            document.getElementById("1").value = data[0].Date;
-            document.getElementById("2").value = data[1].Date;
-            document.getElementById("3").value = data[2].Date;
-        });
-
-
  
     </script>
 </html>

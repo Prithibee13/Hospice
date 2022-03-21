@@ -127,6 +127,12 @@
             </div>    
         </section>
 
+
+
+        <section>
+            <h1 class="text-center">Contract Us</h1>
+        </section>
+
         
    
 
@@ -214,17 +220,26 @@
         });
 
 
-        fetch("Funct7.php")
-        .then(function(response)
-        {
-            return response.json();
-        })
-        .then(function(data)
-        {
-            displayData(data);
-            
 
-        });
+        const scheduleGeter = () =>
+        {
+            fetch("Funct7.php")
+            .then(function(response)
+            {
+                return response.json();
+            })
+            .then(function(data)
+            {
+                displayData(data);
+                
+
+            });
+        }
+
+        scheduleGeter();
+
+
+        
 
         const displayData = (schedules) =>
         {
@@ -236,45 +251,70 @@
                 const cardHolder = document.createElement("article");
 
 
-                const { Available_Day , Available_Time }   = schedule;
+                const { Available_Day , Available_Time ,Maximum_Appointment_Capacity }   = schedule;
 
-                const card = cardCol(Available_Day, Available_Time,i);
+
+
+                const card = cardCol(Available_Day, Available_Time,i, Maximum_Appointment_Capacity);
+
 
                 cardHolder.innerHTML = card;
 
                 row.appendChild(cardHolder);
 
+                const max_capacity = parseInt(Maximum_Appointment_Capacity) 
+                doughnutMaker(i, max_capacity);
+
+               
+
             });
+
+
+          
         }
 
-        /* const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'doughnut',
-    data: {
-        labels: ['Appinted' , "Avaiable"],
-        datasets: [{
-            label: '# of Votes',
-            data: [7,3],
-            backgroundColor: [
-                '#a29bfe',
-                '#CAD3C8'
-            ],
-            borderColor: [
-                '#a29bfe',
-                '#CAD3C8',
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {}
-}); */
+ 
 
 
-        /* const doughnutMaker = (i) ={} */ 
-
-
-        const cardCol = (date , time ,i) =>
+        const doughnutMaker = (i , max_capacity) =>
         {
+            console.log(i , max_capacity);
+
+            const id = "myChart" + i + "";
+            const ctx = document.getElementById(id).getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['capacity' , "Avaiable"],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [max_capacity,3],
+                        backgroundColor: [
+                            '#2D31FA',
+                            '#DFF6FF'
+                        ],
+                        borderColor: [
+                            '#2D31FA',
+                            '#DFF6FF',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {}
+});
+        }
+
+
+
+        const cardCol = (date , time , i , capacity)  =>
+        {
+
+            const max_capacity = parseInt(capacity);
+
+            
+
+            const id = "myChart" + i + "";
+            console.log(id);
             const CardHolder = `
             <div class="col mb-5">
                         
@@ -285,11 +325,18 @@ const myChart = new Chart(ctx, {
 
                                 <h4>Date : <span>${date}</span></h4>
                                 <h4>Time : <span>${time}</span></h4>
+
+                                <h5>Maximum Capacity : ${capacity}</h5>
+
+                                <div class="canvas">
+                                    <canvas id="${id}"></canvas>
+                                </div>
                             </div>
                         </div>
                     </div>
             `
 
+            /*  */
             return CardHolder;
         }
       </script>

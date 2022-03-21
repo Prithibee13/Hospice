@@ -15,15 +15,19 @@
     </head>
     <body>
 
-        <section>
-            <h1 class="title text-center">Set Schedule</h1>
-            <div class="container">
+        <section class="">
+            
+            <div class="container shadow-lg p-5">
+                <h1 class="title text-center py-5 my-3">Set Schedule</h1>
                 <div class="row reg-form mx-auto text-center">
                         <div class="form-field col-lg-6">
                             <input type="Date" class ="input-text" placeholder="Date"  id="date" required/>
                         </div>
                         <div class="form-field col-lg-6">
                             <input type="time" class ="input-text"  placeholder="Time" id="time" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="Maximum_Appintment _Capacity" id="capacity" required/>
                         </div>
                         <div class="form-field col-lg-6">
                             <select class="form-select form-select-lg mb-3 input-text" id = "doc_id" aria-label=".form-select-lg example">
@@ -33,7 +37,7 @@
                             </select>
                         </div>
                         <div class="form-field mx-auto text-white col-lg-12">
-                            <button class="btn" onclick="Scm2();">Set Date</button>
+                            <button class="" id="schedule-btn" onclick="Scm2();">Set Date</button>
                         </div>
 
                 </div>
