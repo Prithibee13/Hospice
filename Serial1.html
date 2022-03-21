@@ -35,7 +35,10 @@
                             <input type="text" class ="input-text" name ="mobile" placeholder="Mobile Number" id="mobile" required/>
                         </div>                        
                         <div class="form-field col-lg-6">
-                            <input type="text"  class ="input-text" name ="id" id="d_id" placeholder="Doctor's id - 1022" value=1021 disabled/>
+                            <select class="form-select form-select-lg mb-3 input-text" id="doctor" aria-label=".form-select-lg example">
+                                <option selected>Choose your Doctor</option>
+                                
+                              </select>
                         </div>
                         <div class="form-field col-lg-6">
                             <select class="form-select form-select-lg mb-3 input-text" id="date" aria-label=".form-select-lg example">
@@ -73,6 +76,34 @@
         
     </body>
     <script>
- 
+        const doctor =() =>
+        {
+            fetch('Funct16.php')
+            .then(res => res.json())
+            .then(data => selectDoctor(data))
+        }
+        
+        doctor();
+        const selectDoctor = (data) =>
+        {
+            const select = document.getElementById("doctor");
+
+            data.forEach(doctor =>{
+                const { Doctor_Name , Department_Name , Doctor_id } = doctor;
+                const option = optionMaker1(Doctor_Name , Department_Name , Doctor_id)
+                select.append(option);
+            });
+        }
+
+        const optionMaker1 = (name , department , id) =>
+        {
+            const option  = document.createElement("option");
+
+            option.setAttribute("value" , id);
+
+            option.innerText = `Doctor Name : ${name} , Department : ${department}`;
+
+            return option;
+        }
     </script>
 </html>

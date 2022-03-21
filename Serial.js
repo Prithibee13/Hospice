@@ -1,25 +1,45 @@
 
+const getstring = (count) =>
+{
+    let c = 1000;
+    let s = ""
+    if(count<26)
+    {
+        s = c + "" + s+String.fromCharCode(65+count);
+    }
+
+    else
+    {
+       /*  return getstring(li/26-1)+String.fromCharCode(li%26+65) */
+       count = count%26;
+       c = c+1;
+       s = c + "" + s+String.fromCharCode(65+count);
+
+    }
+    return s
+}
 
 
 
 const countPatient = () =>
 {
+    return(
     fetch('Funct15.php')
     .then(res => res.json())
     .then(data => idMaker(data))
+    );
 }
-
-
-
-
 
 const idMaker = (number) =>
 {
     const { Number } =  number[0];
 
-    console.log(Number);
+    const count = parseInt(Number) 
+
+    const id = getstring(count);
+    return id;
 }
-countPatient()
+
 
 
 
@@ -28,6 +48,7 @@ const Reg = () =>
     //event.preventDefault();
     let Patients = 
     {
+        Patient_id : "",
         Name : "", 
         Age : "",
         Mobile : "",
@@ -35,8 +56,8 @@ const Reg = () =>
         Doctor_id : "",
         Date : ""
     } 
-       
-   
+
+    console.log(countPatient());
     let Doctor_id = document.getElementById("d_id").value;
     let Date = document.getElementById("date").value;
     let Name = document.getElementById("Name").value;
@@ -52,6 +73,8 @@ const Reg = () =>
     Patients.Gender += Gender;
     Patients.Doctor_id += Doctor_id;
     Patients.Date += Date;
+
+    console.log(Patients);
 
 
     
@@ -69,3 +92,12 @@ const Reg = () =>
 
 
 
+
+
+/* let c = 10001;
+let i,s;
+for(i=0;i<50;i++)
+{
+    s = getstring(c,i)
+    console.log(s)
+} */
