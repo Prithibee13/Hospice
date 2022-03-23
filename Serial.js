@@ -1,4 +1,3 @@
-
 const getstring = (count) =>
 {
     let c = 1000;
@@ -16,16 +15,17 @@ const getstring = (count) =>
        s = c + "" + s+String.fromCharCode(65+count);
 
     }
-    return s
+    return s;
 }
 
-
-
-const countPatient = () =>
+async function countPatient() 
 {
-    fetch('Funct15.php')
-    .then(res => res.json())
-    .then(data => idMaker(data))
+    let res = await fetch('Funct15.php'); 
+    let data = await res.json();
+    data = JSON.stringify(data);
+    data = JSON.parse(data); 
+    let id = idMaker(data);
+    return id;
 }
 
 const idMaker = (number) =>
@@ -38,7 +38,13 @@ const idMaker = (number) =>
     return id;
 }
 
-console.log(countPatient());
+async function a()
+{
+    let abc = await countPatient();
+    console.log(abc);
+}
+
+a();
 
 const Reg = () =>
 {

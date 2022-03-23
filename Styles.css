@@ -436,3 +436,88 @@ button a :hover
   background-color:#5584AC;
   color: #FFFFFF;
 }
+
+
+
+#banner-0
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("./images/hush-naidoo-jade-photography-yo01Z-9HQAw-unsplash.jpg")
+  no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+#banner-1
+{
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/camilo-jimenez-vGu08RYjO-s-unsplash.jpg")
+  no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+
+#banner-2
+{
+  background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/aditya-romansa-5zp0jym2w9M-unsplash.jpg")
+  no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+
+.doctors
+{
+  margin-bottom: 10%;
+  background:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/piron-guillaume-U4FyCp3-KzY-unsplash.jpg")
+  no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+}
+
+.doctors a
+{
+  text-decoration: none;
+  color: white;
+  background-color: #313552;
+  padding: 1.05em 3.6em;
+  border-radius: 0.36em;
+}
+
+.doctors a:hover
+{
+  color: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+
+
+.department h1
+{
+  font-family: 'Montserrat', sans-serif;
+}
+
+.department p 
+{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+
+.departments h2,h3
+{
+  font-family: 'Inter', sans-serif;
+}
