@@ -3,13 +3,13 @@
     top: 0;
     right: 0;
     left: 0;
-    padding: 1.5em;
-    background: #ffffff; 
+    padding: 1.5em; 
+    background-color: #151D3B;
   }
   
   .navbar-brand
   {
-    color: #000000 ;
+    color: #FFFFFF ;
   }
   
   .nav-link {
@@ -17,6 +17,7 @@
     letter-spacing: 0.4px;
     margin: 0 1.6em;
     padding: 0.6em;
+    color: #FFFFFF;
   }
   
   .nav-link.active,
@@ -418,17 +419,20 @@ button a :hover
 }
 
 
-
-section
-{
-  margin-top: 20%;
-}
-
 #schedule-btn 
 {
-  background-color:#4D77FF ;
+  background-color:#4D77FF;
+  padding: 0.7em 2.4em;
+  border-radius: 0.24em;
+  border: 2px solid transparent;
+  color: #ffffff;
 }
 
 
 /*#151D3B*/
 
+.lists
+{
+  background-color:#5584AC;
+  color: #FFFFFF;
+}

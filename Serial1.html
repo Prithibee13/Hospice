@@ -1,3 +1,4 @@
+<?php include 'Funct17.php';?>
 <!DOCTYPE html>
     <head>
         <script src="Serial.js"></script>
@@ -35,17 +36,15 @@
                             <input type="text" class ="input-text" name ="mobile" placeholder="Mobile Number" id="mobile" required/>
                         </div>                        
                         <div class="form-field col-lg-6">
-                            <select class="form-select form-select-lg mb-3 input-text" id="doctor" aria-label=".form-select-lg example">
+                            <select class="form-select form-select-lg mb-3 input-text" onchange="selectHandler1()" id="doctor" >
                                 <option selected>Choose your Doctor</option>
                                 
                               </select>
                         </div>
                         <div class="form-field col-lg-6">
                             <select class="form-select form-select-lg mb-3 input-text" id="date" aria-label=".form-select-lg example">
-                                <option selected>Choose your Suitable Date</option>
-                                <option id="1"></option>
-                                <option id="2"></option>
-                                <option id="3"></option>
+                                <option selected id="baseOption">Choose your Suitable Date</option>
+                                
                               </select>
                         </div>
                         
@@ -76,6 +75,57 @@
         
     </body>
     <script>
+
+
+        const selectHandler1 = () =>
+        {
+            const docId = document.getElementById("doctor").value;  
+
+
+            sendingData(docId);
+
+        }
+
+
+        const sendingData = (json) =>
+        {
+            let headers = {
+                "Content-Type": "application/json"
+            }
+
+            fetch("Funct17.php" , {method : "POST" , headers :headers , body: JSON.stringify(json)})
+            .then(res => res.json())
+            .then(data => retriveDate(data))
+        }
+
+        const retriveDate = (dates) =>
+        {
+            const select = document.getElementById("date");
+            const baseOption = document.getElementById("baseOption");
+
+            select.innerHTML = "";
+
+            select.append(baseOption);
+
+            dates.forEach(date => {
+                const { Available_Day } = date;
+                const option = optionMaker2(Available_Day);
+                select.append(option);
+
+            });
+        }
+
+        const optionMaker2 = (date) =>
+        {
+            const option  = document.createElement("option");
+
+            option.setAttribute("value" , date);
+            option.innerText = date;
+            return option;
+        }
+
+
+
         const doctor =() =>
         {
             fetch('Funct16.php')

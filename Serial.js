@@ -23,11 +23,9 @@ const getstring = (count) =>
 
 const countPatient = () =>
 {
-    return(
     fetch('Funct15.php')
     .then(res => res.json())
     .then(data => idMaker(data))
-    );
 }
 
 const idMaker = (number) =>
@@ -40,8 +38,7 @@ const idMaker = (number) =>
     return id;
 }
 
-
-
+console.log(countPatient());
 
 const Reg = () =>
 {
@@ -57,8 +54,8 @@ const Reg = () =>
         Date : ""
     } 
 
-    console.log(countPatient());
-    let Doctor_id = document.getElementById("d_id").value;
+    /* console.log(countPatient());
+    let Doctor_id = document.getElementById("d_id").value; */
     let Date = document.getElementById("date").value;
     let Name = document.getElementById("Name").value;
     let Age = document.getElementById("age").value;
