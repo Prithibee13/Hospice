@@ -18,35 +18,20 @@ const getstring = (count) =>
     return s;
 }
 
-async function countPatient() 
+function registration() 
 {
-    let res = await fetch('Funct15.php'); 
-    let data = await res.json();
-    data = JSON.stringify(data);
-    data = JSON.parse(data); 
-    let id = idMaker(data);
-    return id;
+    fetch('Funct15.php').
+    then(res => res.json())
+    .then( data => detailes(data))  
 }
-
+/* 
 const idMaker = (number) =>
 {
-    const { Number } =  number[0];
-
-    const count = parseInt(Number) 
-
-    const id = getstring(count);
     return id;
-}
+} */
 
-async function a()
-{
-    let abc = await countPatient();
-    console.log(abc);
-}
 
-a();
-
-const Reg = () =>
+const detailes = (number) =>
 {
     //event.preventDefault();
     let Patients = 
@@ -60,8 +45,15 @@ const Reg = () =>
         Date : ""
     } 
 
-    /* console.log(countPatient());
-    let Doctor_id = document.getElementById("d_id").value; */
+    
+    const { Number } =  number[0];
+
+    const count = parseInt(Number) 
+
+    const id = getstring(count);
+    Patients.Patient_id = id;
+
+    let Doctor_id = document.getElementById("doctor").value; 
     let Date = document.getElementById("date").value;
     let Name = document.getElementById("Name").value;
     let Age = document.getElementById("age").value;
@@ -76,20 +68,22 @@ const Reg = () =>
     Patients.Gender += Gender;
     Patients.Doctor_id += Doctor_id;
     Patients.Date += Date;
+    dataSend(Patients);
 
-    console.log(Patients);
+}
 
-
+const dataSend = (patient) =>
+{
+    console.log(patient);
     
- /*    const detailesJson = JSON.stringify(Patients);
+    const detailesJson = JSON.stringify(patient);
     console.log(detailesJson);
 
     
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "Funct3.php");
     xhr.setRequestHeader("Content-Type", "applicatopn/json")
-    xhr.send(detailesJson); */
-
+    xhr.send(detailesJson); 
 }
 
 

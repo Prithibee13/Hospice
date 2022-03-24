@@ -490,7 +490,7 @@ button a :hover
 {
   text-decoration: none;
   color: white;
-  background-color: #313552;
+  background-color: #676FA3;
   padding: 1.05em 3.6em;
   border-radius: 0.36em;
 }
@@ -499,6 +499,26 @@ button a :hover
 {
   color: #ffffff;
 }
+
+
+.d-doctors
+{
+  margin-top: 20%;
+  margin-bottom: 10%;
+}
+
+.doctors-details
+{
+  margin-top: 20%;
+}
+
+.doctor
+{
+  margin-top: 20%;
+  margin-bottom: 10%;
+}
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
