@@ -490,14 +490,18 @@ button a :hover
 {
   text-decoration: none;
   color: white;
-  background-color: #676FA3;
+  background-color: transparent;
+  border: 2px solid white;
   padding: 1.05em 3.6em;
   border-radius: 0.36em;
+  cursor: pointer;
 }
 
 .doctors a:hover
 {
   color: #ffffff;
+  background-color: #4D77FF;
+  border: 2px solid transparent;
 }
 
 
@@ -518,6 +522,39 @@ button a :hover
   margin-bottom: 10%;
 }
 
+.department a
+{
+  text-decoration: none;
+  padding: 1.05em 3.6em;
+  border-radius: 0.36em;
+  color: #FFFFFF;
+  background-color: transparent;
+  border: 2px solid white;
+  margin-top: 5%;
+  cursor: pointer;
+  
+}
+
+
+.department a:hover 
+{
+  color: #FFFFFF;
+  background-color: #0d6efd;
+  border: 2px solid transparent;
+}
+
+
+.departments 
+{
+  margin-top: 20%;
+}
+
+
+.doc
+{
+  margin-top: 20%;
+}
+
 
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
@@ -535,6 +572,8 @@ button a :hover
 {
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+
 
 
 .departments h2,h3
