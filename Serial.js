@@ -24,11 +24,13 @@ function registration()
     then(res => res.json())
     .then( data => detailes(data))  
 }
-/* 
+ 
 const idMaker = (number) =>
 {
+    const start = 1000;
+    let id = start + number +1;
     return id;
-} */
+} 
 
 
 const detailes = (number) =>
@@ -40,9 +42,10 @@ const detailes = (number) =>
         Name : "", 
         Age : "",
         Mobile : "",
-        Gender : "" ,
+        Gender : "" , 
         Doctor_id : "",
-        Date : ""
+        Date : "",
+        appointment_id : "" 
     } 
 
     
@@ -50,8 +53,11 @@ const detailes = (number) =>
 
     const count = parseInt(Number) 
 
-    const id = getstring(count);
-    Patients.Patient_id = id;
+    const p_id = getstring(count);
+    Patients.Patient_id = p_id;
+
+    const a_id = idMaker(count);
+    Patients.appointment_id = a_id;
 
     let Doctor_id = document.getElementById("doctor").value; 
     let Date = document.getElementById("date").value;
@@ -83,7 +89,7 @@ const dataSend = (patient) =>
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "Funct3.php");
     xhr.setRequestHeader("Content-Type", "applicatopn/json")
-    xhr.send(detailesJson); 
+    xhr.send(detailesJson);  
 }
 
 
