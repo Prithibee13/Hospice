@@ -1,19 +1,25 @@
 <!DOCTYPE html>
     <head>
         <script src="Schedule.js"></script>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><!-- 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
         <link rel="stylesheet" type="text/css" href="Styles.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
     </head>
     <body>
-        <section>
-            <section class="mt-10 mb-10 fg" id="onen">
-                
-            </section>  
+        <section >
+            <h1 class="text-center my-5 py-5">Appointment-lists</h1>
+            <div class="container">
+                <div class="row g-5" id="row">
+
+                </div>
+            </div>
         </section>
+        
        
 
         <section>
@@ -80,6 +86,111 @@
                 </div>
             </footer>
         </section>
-    </body>
 
+
+
+        <script>
+            const  tableData = () =>
+            {
+                fetch("Funct7.php")
+                .then(res =>res.json())
+                .then(data => des(data))
+            }
+
+            tableData();
+
+            const des = (data) =>
+            {
+                data.forEach(store => 
+                {
+                    const { Available_Day } = store;
+
+                    console.log(Available_Day);
+                    let headers = {
+                "Content-Type": "application/json"
+                }
+
+                let json = {
+                    available_Day : Available_Day
+                }
+
+                    fetch("Funct4.php" , {method : "POST" , headers :headers , body: JSON.stringify(json)})
+                    .then(res => res.json())
+                    .then(data => des3(data , Available_Day));
+                });
+            }
+
+
+            const des3 = (data , day) =>
+            {
+                let row = document.getElementById("row");
+                let col = document.createElement("div");
+                col.classList.add("col-md-6");
+                col.classList.add("col-12");
+                let h2 = document.createElement("h2");
+
+                h2.innerHTML = "Schedule Date : " + day;
+
+                h2.classList.add("text-center");
+                h2.classList.add("my-3");
+                h2.classList.add("py-3");
+
+
+                col.appendChild(h2);
+
+                let table = document.createElement("table");
+                table.classList.add("table");
+                table.classList.add("table-bordered");
+                table.classList.add("border-dark");
+                table.classList.add("table-striped");
+                table.classList.add("text-center");
+                const thead = `
+                <thead class="table-dark">
+                    <tr>
+                        <th>Sl NO.</th>
+                        <th>Patient's Name</th>
+                        <th>Patient's Age</th>
+                        <th>Patient's Gender</th>
+                        <th>Patient's Mobile Number</th>
+                        <th>Time</th>
+                    </tr>
+            </thead>
+            `
+            table.innerHTML = thead;
+            const tBody = document.createElement("tbody");
+            let i = 0;
+            data.forEach(data =>
+            {
+                i++;
+                const tr = document.createElement("tr");
+                
+                 const { Patient_Name , Patient_Phone , Patient_Age , Patient_Sex, Time } = data;
+                const td = tableRowMaker(i,Patient_Name , Patient_Age ,Patient_Sex ,Patient_Phone , Time);
+                tr.innerHTML = td; 
+                tBody.appendChild(tr);
+              });
+            console.log(tBody);
+            table.appendChild(tBody); 
+            col.append(table);
+            row.appendChild(col);
+            }
+
+            const tableRowMaker = ( i, name ,age , gender , mobile ,  time   ) =>
+            {
+                td = `
+                    <td>${i}</td>
+                    <td>${name}</td>
+                    <td>${gender}</td>
+                    <td>${age}</td>
+                    <td>${mobile}</td>
+                    <td>${time}</td>
+                `
+
+                return td;
+            } 
+
+
+        </script>
+    </body>
+<!--  -->
 </html>

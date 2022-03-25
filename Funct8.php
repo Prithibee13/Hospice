@@ -5,14 +5,14 @@ header('Content-Type: application/json');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "our Clinic";
+$dbname = "our Clinic 2";
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT `Date` , Time FROM `schedule` WHERE `Doctor_id` = '1022'";
+    $sql = "SELECT `Available_Day`, `Available_Time` , `Maximum_Appointment_Capacity` FROM `doctor_availability` WHERE Doctor_id = '1012' ORDER By Available_Day";
     $result = $conn->query($sql);
 
     $Datas = array();

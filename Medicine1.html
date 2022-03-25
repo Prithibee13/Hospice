@@ -44,7 +44,9 @@
             </nav>
         </section>
 
-
+        <header>
+            <h1 class="my-5 py-5 text-center">WELCOME</h1>
+        </header>
         <section class="doctor">
             <div class="container">
                 <div class="row g-5 d-flex justify-content-center align-items-center">
@@ -69,7 +71,7 @@
                             <div class="card-body ">
                               <h2 class="card-title">Doctor Log-in</h2>
                               <p class="card-text lead">Log in As Doctor/Admin of Department of Medicine</p>
-                              <button class="btn btn-primary text-white" onclick="show1()">Login</button>
+                              <a href="Login.html" class="btn btn-primary text-white" >Login</a>
                               
                             </div>
                           </div>
@@ -79,7 +81,7 @@
                             <div class="card-body">
                               <h2 class="card-title">Set an Appointment</h2>
                               <p class="card-text lead">Register a patient.</p>
-                              <button class="btn btn-primary text-white" onclick="reg1()">Set Appointment</button>
+                              <a class="btn btn-primary text-white" href="Serial1.html">Set Appointment</a>
                               
                             </div>
                           </div>
@@ -244,7 +246,7 @@
         const displayData = (schedules) =>
         {
             const row = document.getElementById("schedule-card");
-            let i =0;
+            let i = 0;
             schedules.forEach(schedule => 
             {
                 i++;
@@ -262,13 +264,30 @@
 
                 row.appendChild(cardHolder);
 
-                const max_capacity = parseInt(Maximum_Appointment_Capacity) 
-                doughnutMaker(i, max_capacity);
+                const max_capacity = parseInt(Maximum_Appointment_Capacity);
 
-               
+
+                let headers = {
+                "Content-Type": "application/json"
+                }
+
+            let CountPatient = {
+                day : Available_Day,
+                doctor_id : "1011"
+
+                }
+                n = 1;
+
+                fetch("FUNCT18.php" , {method : "POST" , headers :headers , body: JSON.stringify(CountPatient)})
+                .then(res => res.json())
+                .then(function(data)
+                {
+                    doughnutMaker(n , max_capacity ,data);
+                    n++;
+                })
 
             });
-
+            
 
           
         }
@@ -276,32 +295,35 @@
  
 
 
-        const doughnutMaker = (i , max_capacity) =>
+        const doughnutMaker = (i,max_capacity , data) =>
         {
-            console.log(i , max_capacity);
+            const appointed = parseInt(data[0].TOTAL_Patient);
+            const availability = max_capacity - appointed;
+            console.log(availability);
+            
 
             const id = "myChart" + i + "";
             const ctx = document.getElementById(id).getContext('2d');
             const myChart = new Chart(ctx, {
                 type: 'doughnut',
                 data: {
-                    labels: ['capacity' , "Avaiable"],
+                    labels: ['Appointed' , "Avaiable"],
                     datasets: [{
                         label: '# of Votes',
-                        data: [max_capacity,3],
+                        data: [appointed,availability],
                         backgroundColor: [
-                            '#2D31FA',
-                            '#DFF6FF'
+                            '#203239',
+                            '#98B4AA'
                         ],
                         borderColor: [
-                            '#2D31FA',
-                            '#DFF6FF',
+                            '#203239',
+                            '#98B4AA',
                         ],
                         borderWidth: 1
                     }]
                 },
                 options: {}
-});
+            });
         }
 
 
@@ -339,7 +361,10 @@
             /*  */
             return CardHolder;
         }
+
+
       </script>
 
       
 </html>
+
