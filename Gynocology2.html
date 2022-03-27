@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row g-5 d-flex justify-content-center align-items-center">
                 <div class="col-md-6 col-2">
-                    <h1 id="M1"></h1>
+                    <h1 id="g2"></h1>
                     <button class="btn btn-primary">Learn More</button>
                     <button class="btn btn-warning">Contact Us</button>
                 </div>
@@ -88,7 +88,21 @@
 
 
 
+    <section class="section1">
 
+        <h1 class="text-center mt-5 py-5 mb-5">Our Recent Schedules</h1>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-5" id="schedule-card">
+                
+            </div>
+        </div>    
+    </section>
+
+
+
+    <section>
+        <h1 class="text-center">Contract Us</h1>
+    </section>
 
 
     <section>
@@ -158,6 +172,28 @@
         
 
     <script>
+
+        
+const doctorName = () =>
+        {
+            let id = "1022";
+            let headers = {
+                "Content-Type": "application/json"
+            }
+            fetch("Funct12.php" , {method : "POST" , headers :headers , body: JSON.stringify(id)})
+            .then(res => res.json())
+            .then(data => nameGeater(data))
+        }
+
+        const nameGeater = (name) =>
+        {
+            const docObj = name[0];
+            const docName = docObj.Doctor_Name;
+
+            document.getElementById("g2").innerText = docName; 
+            
+        }
+        doctorName();
         const scheduleGeter = () =>
         {
             fetch("Funct7.php")
@@ -208,7 +244,7 @@
 
             let CountPatient = {
                 day : Available_Day,
-                doctor_id : "1011"
+                doctor_id : "1022"
 
                 }
                 n = 1;

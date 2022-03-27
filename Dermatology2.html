@@ -5,8 +5,7 @@
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="Styles.css">
-        
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -21,12 +20,12 @@
         <div class="container">
             <div class="row g-5 d-flex justify-content-center align-items-center">
                 <div class="col-md-6 col-12">
-                    <h1 class="py-3 my-3" id="c2"></h1>
+                    <h1 class="py-3 my-3" id="d2"></h1>
                     <button class="btn btn-primary">Learn More</button>
                     <button class="btn btn-warning">Contact Us</button>
                 </div>
                 <div class="col-md-6 col-12">
-                    <img class = "w-100 rounded" src="https://cdn.pixabay.com/photo/2016/02/08/23/36/isolated-1188036__480.png" alt="">
+                    <img class = "w-100 rounded" src="https://media.istockphoto.com/photos/doctor-clicking-on-a-laptop-before-her-picture-id1292777576?b=1&k=20&m=1292777576&s=170667a&w=0&h=Tg1ASn3aw19DgyqjGaaWqJmPeXiDRaU1LW8c83Y5tbw=" alt="">
                 </div>
             </div>
         </div>
@@ -174,11 +173,11 @@
     <script>
         const doctorName = () =>
         {
-            let id = "1042";
+            let id = "1032";
             let headers = {
                 "Content-Type": "application/json"
             }
-            fetch("Funct21.php" , {method : "POST" , headers :headers , body: JSON.stringify(id)})
+            fetch("Funct23.php" , {method : "POST" , headers :headers , body: JSON.stringify(id)})
             .then(res => res.json())
             .then(data => nameGeater(data))
         }
@@ -188,7 +187,7 @@
             const docObj = name[0];
             const docName = docObj.Doctor_Name;
 
-            document.getElementById("c2").innerText = docName; 
+            document.getElementById("d2").innerText = docName; 
             
         }
         doctorName();
@@ -196,10 +195,12 @@
 
         const scheduleGeter = () =>
         {
-            let id = "1042";
+            
+            let id = "1032";
             let headers = {
                 "Content-Type": "application/json"
             }
+           
 
             fetch("Funct22.php", {method : "POST" , headers :headers , body: JSON.stringify(id)})
 
@@ -252,7 +253,7 @@
 
             let CountPatient = {
                 day : Available_Day,
-                doctor_id : "1042"
+                doctor_id : "1032"
 
                 }
                 n = 1;

@@ -1,89 +1,26 @@
 <!DOCTYPE html>
     <head>
         <script src="Schedule.js"></script>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/><!-- 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
         <link rel="stylesheet" type="text/css" href="Styles.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
     </head>
     <body>
-        <section>
-            <section class="mt-10 mb-10 fg" id="onen">
-                <h1 class="title text-center">Set Schedule</h1>
-                <div class="container">
-                    <div class="row reg-form mx-auto text-center">
-                            <div class="form-field col-lg-6">
-                                <input type="Date" class ="input-text" placeholder="Date"  id="date" required/>
-                            </div>
-                            <div class="form-field col-lg-6">
-                                <input type="time" class ="input-text"  placeholder="Time" id="time" required/>
-                            </div>
-                            <div class="form-field col-lg-6">
-                                <input type="number" class ="input-text" id="doc_id" placeholder="" value=1022 disabled/>
-                            </div>
-                            <div class="form-field mx-auto text-white col-lg-12">
-                                <button class="btn" onclick="Scm2();">Set Date</button>
-                             </div>
-    
-                    </div>
-                </div>
-            </section>  
-        </section>
-        <section>
+        <section >
+            <h1 class="text-center my-5 py-5">Appointment-lists</h1>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-12 mx-auto">
-                        <table class="table table-striped table-borderless">
-                            <thead>
-                                <tr>
-                                    <th>Sl No.</th>
-                                    <th>Patient Id</th>  
-                                    <th>Name</th>
-                                    <th>Age</th>
-                                    <th>Gender</th>
-                                    <th>Mobile</th>
-                                </td>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                   <td id="Name1"></td>
-                                   <td id="Age1"></td>
-                                   <td id="gen1"></td>
-                                   <td id="mobile1"></td> 
-                                </tr>
-            
-                                
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td id="Name2"></td>
-                                    <td id="Age2"></td>
-                                    <td id="gen2"></td>
-                                    <td id="mobile2"></td> 
-                                 </tr>
-            
-                                 
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td id="Name3"></td>
-                                    <td id="Age3"></td>
-                                    <td id="gen3"></td>
-                                    <td id="mobile3"></td> 
-                                 </tr>
-                            </tbody>
-                    </table>
-                    </div>
-                    
+                <div class="row g-5" id="row">
+
                 </div>
             </div>
-            
         </section>
-
+        
+       
 
         <section>
             <footer class="site-footer" data-aos="fade-up">
@@ -149,6 +86,119 @@
                 </div>
             </footer>
         </section>
-    </body>
 
+
+
+        <script>
+            const  tableData = () =>
+            {
+                let headers = {
+                "Content-Type": "application/json"
+                }
+
+                let json = {
+                    id : "1012"
+                }
+                fetch("Funct24.php" , {method : "POST" , headers :headers , body: JSON.stringify(json)})
+                .then(res =>res.json())
+                .then(data => des(data))
+            }
+
+            tableData();
+
+            const des = (data) =>
+            {
+                data.forEach(store => 
+                {
+                    const { Available_Day } = store;
+
+                    console.log(Available_Day);
+                    let headers = {
+                "Content-Type": "application/json"
+                }
+
+                let json = {
+                    available_Day : Available_Day,
+                    id : "1012"
+                }
+
+                    fetch("Funct4.php" , {method : "POST" , headers :headers , body: JSON.stringify(json)})
+                    .then(res => res.json())
+                    .then(data => des3(data , Available_Day));
+                });
+            }
+
+
+            const des3 = (data , day) =>
+            {
+                let row = document.getElementById("row");
+                let col = document.createElement("div");
+                col.classList.add("col-md-6");
+                col.classList.add("col-12");
+                let h2 = document.createElement("h2");
+
+                h2.innerHTML = "Schedule Date : " + day;
+
+                h2.classList.add("text-center");
+                h2.classList.add("my-3");
+                h2.classList.add("py-3");
+
+
+                col.appendChild(h2);
+
+                let table = document.createElement("table");
+                table.classList.add("table");
+                table.classList.add("table-bordered");
+                table.classList.add("border-dark");
+                table.classList.add("table-striped");
+                table.classList.add("text-center");
+                const thead = `
+                <thead class="table-dark">
+                    <tr>
+                        <th>Sl NO.</th>
+                        <th>Patient's Name</th>
+                        <th>Patient's Age</th>
+                        <th>Patient's Gender</th>
+                        <th>Patient's Mobile Number</th>
+                        <th>Time</th>
+                    </tr>
+            </thead>
+            `
+            table.innerHTML = thead;
+            const tBody = document.createElement("tbody");
+            let i = 0;
+            data.forEach(data =>
+            {
+                i++;
+                const tr = document.createElement("tr");
+                
+                 const { Patient_Name , Patient_Phone , Patient_Age , Patient_Sex, Time } = data;
+                const td = tableRowMaker(i,Patient_Name , Patient_Age ,Patient_Sex ,Patient_Phone , Time);
+                tr.innerHTML = td; 
+                tBody.appendChild(tr);
+              });
+            console.log(tBody);
+            table.appendChild(tBody); 
+            col.append(table);
+            row.appendChild(col);
+            }
+
+            const tableRowMaker = ( i, name ,age , gender , mobile ,  time   ) =>
+            {
+                td = `
+                    <td>${i}</td>
+                    <td>${name}</td>
+                    <td>${gender}</td>
+                    <td>${age}</td>
+                    <td>${mobile}</td>
+                    <td>${time}</td>
+                `
+
+                return td;
+            } 
+
+
+        </script>
+    </body>
+<!--  -->
 </html>

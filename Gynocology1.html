@@ -22,12 +22,12 @@
     <section class="doctor">
         <div class="container">
             <div class="row g-5 d-flex justify-content-center align-items-center">
-                <div class="col-md-6 col-2">
-                    <h1 id="M1"></h1>
+                <div class="col-md-6 col-12">
+                    <h1 class="py-3 my-3" id="g1"></h1>
                     <button class="btn btn-primary">Learn More</button>
                     <button class="btn btn-warning">Contact Us</button>
                 </div>
-                <div class="col-md-6 col-2">
+                <div class="col-md-6 col-12">
                     <img src="https://images.unsplash.com/photo-1576669801775-ff43c5ab079d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTAwfHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" alt="">
                 </div>
             </div>
@@ -178,9 +178,36 @@
 
 
     <script>
+        const doctorName = () =>
+        {
+            let id = "1021";
+            let headers = {
+                "Content-Type": "application/json"
+            }
+            fetch("Funct12.php" , {method : "POST" , headers :headers , body: JSON.stringify(id)})
+            .then(res => res.json())
+            .then(data => nameGeater(data))
+        }
+
+        const nameGeater = (name) =>
+        {
+            const docObj = name[0];
+            const docName = docObj.Doctor_Name;
+
+            document.getElementById("g1").innerText = docName; 
+            
+        }
+        doctorName();
+
+
         const scheduleGeter = () =>
         {
-            fetch("Funct7.php")
+           
+
+            fetch("Funct19.php")
+
+
+
             .then(function(response)
             {
                 return response.json();
@@ -228,7 +255,7 @@
 
             let CountPatient = {
                 day : Available_Day,
-                doctor_id : "1011"
+                doctor_id : "1022"
 
                 }
                 n = 1;

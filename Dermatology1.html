@@ -21,12 +21,12 @@
         <div class="container">
             <div class="row g-5 d-flex justify-content-center align-items-center">
                 <div class="col-md-6 col-12">
-                    <h1 class="py-3 my-3" id="c2"></h1>
+                    <h1 class="py-3 my-3" id="d1"></h1>
                     <button class="btn btn-primary">Learn More</button>
                     <button class="btn btn-warning">Contact Us</button>
                 </div>
                 <div class="col-md-6 col-12">
-                    <img class = "w-100 rounded" src="https://cdn.pixabay.com/photo/2016/02/08/23/36/isolated-1188036__480.png" alt="">
+                    <img class = "w-100 rounded" src="https://media.istockphoto.com/photos/mature-doctor-holding-medical-records-at-hospital-picture-id1346124955?b=1&k=20&m=1346124955&s=170667a&w=0&h=BlMmV87xEQMzCTFnhfNlpwl58cDVHXCGiatPd-3AotE=" alt="">
                 </div>
             </div>
         </div>
@@ -174,11 +174,11 @@
     <script>
         const doctorName = () =>
         {
-            let id = "1042";
+            let id = "1031";
             let headers = {
                 "Content-Type": "application/json"
             }
-            fetch("Funct21.php" , {method : "POST" , headers :headers , body: JSON.stringify(id)})
+            fetch("Funct23.php" , {method : "POST" , headers :headers , body: JSON.stringify(id)})
             .then(res => res.json())
             .then(data => nameGeater(data))
         }
@@ -188,7 +188,7 @@
             const docObj = name[0];
             const docName = docObj.Doctor_Name;
 
-            document.getElementById("c2").innerText = docName; 
+            document.getElementById("d1").innerText = docName; 
             
         }
         doctorName();
@@ -196,10 +196,12 @@
 
         const scheduleGeter = () =>
         {
-            let id = "1042";
+            
+            let id = "1031";
             let headers = {
                 "Content-Type": "application/json"
             }
+           
 
             fetch("Funct22.php", {method : "POST" , headers :headers , body: JSON.stringify(id)})
 
@@ -252,7 +254,7 @@
 
             let CountPatient = {
                 day : Available_Day,
-                doctor_id : "1042"
+                doctor_id : "1031"
 
                 }
                 n = 1;

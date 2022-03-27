@@ -1,18 +1,23 @@
 <?php
 
 header('Content-Type: application/json');
+$requst = file_get_contents("php://input");
+
+$obj = json_decode($requst);
+
+$id = $obj -> id;
 
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "our clinic 2";
+$dbname = "our Clinic 2";
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT doctor.Doctor_Name FROM department JOIN doctor ON department.Department_ID = doctor.Department_ID WHERE department.Department_Name='Medicine'";
+    $sql = "SELECT `Available_Day`, `Available_Time` , `Maximum_Appointment_Capacity` FROM `doctor_availability` WHERE Doctor_id = '$id' ORDER By Available_Day";
     $result = $conn->query($sql);
 
     $Datas = array();

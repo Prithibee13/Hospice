@@ -12,7 +12,7 @@ $dbname = "our clinic 2";
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM `admin`;";
+    $sql = "SELECT `Available_Day`, `Available_Time` , `Maximum_Appointment_Capacity` FROM `doctor_availability` WHERE Doctor_id = '1021' ORDER By Available_Day";
     $result = $conn->query($sql);
 
     $Datas = array();
