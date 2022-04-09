@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+    <head>
+        <!-- <script src="Serial.js"></script>
+        <script src="control.js"></script> -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="Styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <header class="text-white">
+            <nav class="navbar navbar-expand-lg fixed-top">
+              <div class="container">
+                  <a class="navbar-brand" href="index.html"><img src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ms-2">Hospice</span></a>
+
+          </nav>
+          </header>
+
+          <section class="mar-20">
+              <div>
+                  <h2 class="text-center">See Your Appointments Update</h2>
+              </div>
+          </section>
+    
+        <section class="mt-10 mb-10 text-center" id="onen">
+            <h1 class="title text-center">Check Your Appointments Update </h1>
+            <div class="container">
+                <div class="row reg-form mx-auto text-center">
+                        <div class="form-field mx-auto col-lg-6">
+                            <input type="text" class ="input-text" name ="ID" placeholder="Patient's Id" id="p-id" required/>
+                        </div>
+                        <div class="form-field mx-auto text-white col-lg-12">
+                            <button class="btn" onclick="getUpdate();">Check In</button>
+                         </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row" id="row"></div>
+            </div>
+        </section>
+
+        <script>
+            const getUpdate = () =>
+            {
+                const patient_id = document.getElementById("p-id").value;
+
+                let headers = {
+                "Content-Type": "application/json"
+                }
+
+                let json = { 
+                    id : patient_id
+                }
+
+                fetch("Funct25.php" , {method : "POST" , headers :headers , body: JSON.stringify(json)})
+                .then(res => res.json())
+                .then(data => updateMaker(data))
+            }
+
+            const updateMaker = (data) =>
+            {
+                let row = document.getElementById("row");
+                data.forEach(update => 
+                {
+                    let col = document.createElement("div");
+                    col.classList.add("col-md-8");
+                    col.classList.add("mx-auto");
+                    col.classList.add("shadow-lg");
+                    col.classList.add("p-5");
+                    col.classList.add("mb-5");
+
+
+                    const {  Appointment_Date , Doctor_Name , Department_Name , Available_Time , Patient_Age , Patient_ID , Patient_Name , Patient_Phone , Patient_Sex } = update;   
+
+                    const lists = listMaker(Appointment_Date , Doctor_Name , Department_Name , Available_Time , Patient_Age , Patient_ID , Patient_Name , Patient_Phone , Patient_Sex );
+
+                    col.innerHTML = lists;
+
+                    row.appendChild(col);
+                });
+            }
+
+
+                const listMaker = ( a_date ,d_name , dep_name , a_time , p_age ,  p_id , p_name , p_phone , p_gender) =>
+                {
+                    list = `
+                                <div><h3 class="text-center py-2 my-2">${p_name}'s  Updates</h3></div>
+                                <ul>
+                                    <li>Patient's Id : ${p_id}</li>
+                                    <li>Patient's Name : ${p_name}</li>
+                                    <li>Patient's Age: ${p_age}</li>
+                                    <li>Patient's Gender : ${p_gender}</li>
+                                    <li>Patient's Mobile Number : ${p_phone}</li>
+                                    <li>Appointed Doctor Name : ${d_name}</li>
+                                    <li>Department Name : ${dep_name}</li>
+                                    <li>Appointment Date : ${a_date}</li>
+                                    <li>Appointment Time : ${a_time}</li>
+                                </ul>
+                    `
+
+                    return list;
+                }
+
+        </script>
+    </body>
+</html>
+
+<!--    -->

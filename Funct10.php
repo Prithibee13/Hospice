@@ -12,7 +12,7 @@ $dbname = "our clinic 2";
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT doctor.Doctor_Name, doctor.Doctor_Education FROM department JOIN doctor ON department.Department_ID = doctor.Department_ID WHERE department.Department_Name='Cardiology'";
+    $sql = "SELECT doctors.Doctor_Name FROM departments JOIN doctors ON departments.Department_ID = doctors.Department_ID WHERE departments.Department_Name='Cardiology'";
     $result = $conn->query($sql);
 
     $Datas = array();

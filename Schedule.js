@@ -1,5 +1,6 @@
 const Scm2 = () =>
 {
+    document.getElementById("schedule-spinner").style.display = "block";
     let Schedule =
     {
         Date : "",
@@ -23,4 +24,6 @@ const Scm2 = () =>
     xhr.open("POST", "Funct6.php");
     xhr.setRequestHeader("Content-Type", "applicatopn/json")
     xhr.send(json); 
+
+    document.getElementById("schedule-spinner").style.display = "none";
 }

@@ -28,7 +28,7 @@ if ($conn->connect_error) {
 }
 
 
-$sql = "INSERT INTO doctor_availability (Available_Day , Available_Time, Doctor_id , Maximum_Appointment_Capacity) VALUES ('$date','$time','$doctor_id', '$capacity');";
+$sql = "INSERT INTO doctor_availabilities (Available_Day , Available_Time, Doctor_id , Maximum_capacity) VALUES ('$date','$time','$doctor_id', '$capacity');";
 
 
 if($conn -> query($sql) === TRUE)

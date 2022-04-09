@@ -12,7 +12,7 @@ $dbname = "our clinic 2";
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT Doctor_id From doctor;";
+    $sql = "SELECT Doctor_id From doctors;";
     $result = $conn->query($sql);
 
     $Datas = array();

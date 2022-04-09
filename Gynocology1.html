@@ -15,7 +15,15 @@
 </head>
 <body>
 
-    
+    <header class="text-white">
+        <nav class="navbar navbar-expand-lg fixed-top">
+          <div class="container">
+              <a class="navbar-brand" href="index.html"><img  src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ml-2">Hospice</span></a>
+  
+          </div>
+      </nav>
+      </header>
+          
     <header>
         <h1 class="my-5 py-5 text-center">WELCOME</h1>
     </header>
@@ -235,18 +243,18 @@
                 const cardHolder = document.createElement("article");
 
 
-                const { Available_Day , Available_Time ,Maximum_Appointment_Capacity }   = schedule;
+                const { Available_Day , Available_Time ,Maximum_capacity }   = schedule;
 
 
 
-                const card = cardCol(Available_Day, Available_Time,i, Maximum_Appointment_Capacity);
+                const card = cardCol(Available_Day, Available_Time,i, Maximum_capacity);
 
 
                 cardHolder.innerHTML = card;
 
                 row.appendChild(cardHolder);
 
-                const max_capacity = parseInt(Maximum_Appointment_Capacity);
+                const max_capacity = parseInt(Maximum_capacity);
 
 
                 let headers = {
@@ -282,6 +290,10 @@
             const appointed = parseInt(data[0].TOTAL_Patient);
             const availability = max_capacity - appointed;
             console.log(availability);
+
+            
+            document.getElementById("ap-" + i + "").innerHTML = "Appointed : " + appointed;
+            document.getElementById("av-" + i + "").innerHTML = "Available : " + availability; 
             
 
             const id = "myChart" + i + "";
@@ -331,6 +343,8 @@
                                 <h4>Time : <span>${time}</span></h4>
 
                                 <h5>Maximum Capacity : ${capacity}</h5>
+                                <h5 id = "ap-${i}"></h5>
+                                <h5 id="av-${i}"></h5>
 
                                 <div class="canvas">
                                     <canvas id="${id}"></canvas>

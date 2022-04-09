@@ -15,7 +15,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Department_Name FROM `department";
+$sql = "SELECT Department_Name FROM `departments`";
 $result = $conn->query($sql);
 
 $Datas = array();

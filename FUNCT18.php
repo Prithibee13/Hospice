@@ -21,7 +21,7 @@ if ($conn->connect_error)
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT COUNT(Patient_ID) AS TOTAL_Patient FROM appointment WHERE Appointment_Date = '$date' AND Doctor_id = '$doctor_id';";
+$sql = "SELECT COUNT(Patient_ID) AS TOTAL_Patient FROM appointments WHERE Appointment_Date = '$date' AND Doctor_id = '$doctor_id';";
 
 $result = $conn->query($sql);
 

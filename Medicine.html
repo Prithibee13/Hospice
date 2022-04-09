@@ -47,14 +47,14 @@
             
         </section>
     
-    <section>
-        <div class="text-center">
+    <section class="d-flex justify-content-center align-items-center medicine ">
+        <div class="text-center text-white">
             <h1 class="">Departments of MEDICINE</h1>
-            <div class="col-lg-6 mx-auto">
+            <div class="col-lg-6 mx-auto my-3 py-2">
               <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium obcaecati dolorum rerum blanditiis mollitia, reiciendis eius, aut cupiditate officia, exercitationem voluptatem sint totam quos libero voluptatibus consequuntur natus suscipit.</p>
-              </div>
+                <a class="mt-5">Our Doctors</a>
             </div>
-          </div>
+            </div>
     </section>
 
     <section class="doctors-details">
@@ -171,9 +171,9 @@
         doctors.forEach(doctor => 
         {
             console.log(doctor);
-            const { Doctor_Name , Doctor_Education } = doctor;
+            const { Doctor_Name } = doctor;
             const cardArticle = document.createElement("article");
-            const div = cardMaker(Doctor_Name , Doctor_Education , i);
+            const div = cardMaker(Doctor_Name , i);
             cardArticle.innerHTML = `${div}`;
             i++;
 
@@ -184,7 +184,7 @@
         
     }
     
-    const cardMaker = (name , education , i) =>
+    const cardMaker = (name  , i) =>
     {
     
         let img =["https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60" , "https://cdn.pixabay.com/photo/2020/11/02/19/52/doctor-5707722_1280.jpg"]
@@ -193,13 +193,12 @@
         const card = `
         
                     <div class="col">
-                      <div class="card h-100 shadow-lg">
+                      <div class="card h-100 text-center shadow-lg">
                         <img src="${img[i]}" class="card-img-top" alt="...">
                         <div class="card-body">
                           <h2 class="card-title text-center">${name}</h2>
-                          <h4>${education}</h4>
                             
-                          <a href="${path}" class="btn btn-primary">View Website</a>
+                          <a href="${path}" class="btn btn-primary mt-5">View Website</a>
                         </div>
                       </div>
                     </div>

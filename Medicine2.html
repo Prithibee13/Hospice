@@ -16,33 +16,14 @@
     <body>
 
         <section>
-            <nav class="navbar navbar-expand-lg ">
-                <div class="container">
-                    <a class="navbar-brand" href="index.html"><img src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ms-2">Hospice</span></a>
-        
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-        
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                                <a href="index.html" class="nav-link smoothScroll">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="Department.html" class="nav-link smoothScroll">Departments</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="doctor.html" class="nav-link">Doctors</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="location3.html" class="nav-link">Chamber #2</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+            <header class="text-white">
+                <nav class="navbar navbar-expand-lg fixed-top">
+                  <div class="container">
+                      <a class="navbar-brand" href="index.html"><img  src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ml-2">Hospice</span></a>
+          
+                  </div>
+              </nav>
+              </header>
         </section>
 
         <header>
@@ -242,18 +223,18 @@
                 const cardHolder = document.createElement("article");
 
 
-                const { Available_Day , Available_Time ,Maximum_Appointment_Capacity }   = schedule;
+                const { Available_Day , Available_Time ,Maximum_capacity }   = schedule;
 
 
 
-                const card = cardCol(Available_Day, Available_Time,i, Maximum_Appointment_Capacity);
+                const card = cardCol(Available_Day, Available_Time,i, Maximum_capacity);
 
 
                 cardHolder.innerHTML = card;
 
                 row.appendChild(cardHolder);
 
-                const max_capacity = parseInt(Maximum_Appointment_Capacity);
+                const max_capacity = parseInt(Maximum_capacity);
 
 
                 let headers = {

@@ -1,18 +1,16 @@
 <?php
 
-header('Content-Type: application/json');
-
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "our Clinic 2";
+$dbname = "our clinic 2";
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT `Available_Day`, `Available_Time` , `Maximum_capacity` FROM `doctor_availabilities` WHERE Doctor_id = '1011' ORDER By Available_Day";
+    $sql = "SELECT Department_Name , Department_Location from departments";
     $result = $conn->query($sql);
 
     $Datas = array();

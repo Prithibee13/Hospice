@@ -2,27 +2,58 @@
 
 function login()
 {
-    let email = document.getElementById("email").value;
-    let pass = document.getElementById("pass").value;
-    console.log(email);
-    console.log(pass);
+    const docID = document.getElementById("doc_id").value;
+
+    if(docID === "1011")
+    {
+        location.href = "Admin1.html"
+    }
+
+    else if(docID === "1012")
+    {
+        location.href = "Admin2.html"
+    }
+
     
-    fetch("Funct9.php")
-    .then(function(response)
+    else if(docID === "1021")
     {
-        return response.json();
-    })
-    .then(function(data)
+        location.href ="Admin3.html"
+    }
+
+    else if(docID === "1022")
     {
-        
-        let i;
-        console.log(data);
-        
-        const count = Object.keys(data).length;
-        for(i=0;i<count;i++)
-        {
-            console.log(data[i].Email);
-        }
-        
-    })
+        location.href = "Admin4.html"
+    }
+    else if(docID === "1031")
+    {
+        location.href = "Admin5.html"
+    }
+    else if(docID === "1032")
+    {
+        location.href = "Admin6.html"
+    }
+    else if(docID === "1041")
+    {
+        location.href = "Admin7.html" 
+    }
+    else if(docID === "1042")
+    {
+        location.href = "Admin8.html"
+    }
+    else if(docID === "1051")
+    {
+        location.href = "Admin9.html"
+    }
+    else if(docID === "1052")
+    {
+        location.href = "Admin10.html"
+    }
+    else if(docID === "1061")
+    {
+        location.href = "Admin11.html"
+    }
+    else if(docID === "1062")
+    {
+        location.href = "Admin12.html"
+    }
 }

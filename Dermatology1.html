@@ -234,18 +234,18 @@
                 const cardHolder = document.createElement("article");
 
 
-                const { Available_Day , Available_Time ,Maximum_Appointment_Capacity }   = schedule;
+                const { Available_Day , Available_Time ,Maximum_capacity }   = schedule;
 
 
 
-                const card = cardCol(Available_Day, Available_Time,i, Maximum_Appointment_Capacity);
+                const card = cardCol(Available_Day, Available_Time,i, Maximum_capacity);
 
 
                 cardHolder.innerHTML = card;
 
                 row.appendChild(cardHolder);
 
-                const max_capacity = parseInt(Maximum_Appointment_Capacity);
+                const max_capacity = parseInt(Maximum_capacity);
 
 
                 let headers = {
@@ -282,6 +282,10 @@
             const availability = max_capacity - appointed;
             console.log(availability);
             
+
+            
+            document.getElementById("ap-" + i + "").innerHTML = "Appointed : " + appointed;
+            document.getElementById("av-" + i + "").innerHTML = "Available : " + availability; 
 
             const id = "myChart" + i + "";
             const ctx = document.getElementById(id).getContext('2d');
@@ -330,6 +334,8 @@
                                 <h4>Time : <span>${time}</span></h4>
 
                                 <h5>Maximum Capacity : ${capacity}</h5>
+                                <h5 id = "ap-${i}"></h5>
+                                <h5 id="av-${i}"></h5>
 
                                 <div class="canvas">
                                     <canvas id="${id}"></canvas>

@@ -22,7 +22,7 @@ if ($conn->connect_error)
 }
 
 
-$sql = "SELECT Available_Day FROM doctor_availability WHERE Doctor_id = '$id';";
+$sql = "SELECT Available_Day FROM doctor_availabilities WHERE Doctor_id = '$id';";
 
 $result = $conn->query($sql);
 

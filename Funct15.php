@@ -16,7 +16,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT COUNT(Patient_ID) AS Number FROM patient";
+$sql = "SELECT COUNT(Patient_ID) AS Number FROM patients";
 $result = $conn->query($sql);
 
 $Datas = array();

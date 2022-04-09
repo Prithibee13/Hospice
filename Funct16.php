@@ -15,7 +15,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Do.Doctor_Name , DE.Department_Name , Do.Doctor_id FROM doctor AS Do JOIN department AS DE Where Do.Department_ID = DE.Department_ID";
+$sql = "SELECT Do.Doctor_Name , DE.Department_Name , Do.Doctor_id FROM doctors AS Do JOIN departments AS DE Where Do.Department_ID = DE.Department_ID";
 $result = $conn->query($sql);
 
 $Datas = array();

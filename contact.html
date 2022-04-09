@@ -4,60 +4,80 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = "control.js"></script>
+
+    
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/> 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="Styles.css">
-    <title>Physical Medicine</title>
+    <title>Contact Us</title>
+    
 </head>
 <body>
-    <header class="text-white">
-        <nav class="navbar navbar-expand-lg fixed-top">
-          <div class="container">
-              <a class="navbar-brand" href="index.html"><img  src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ml-2">Hospice</span></a>
-  
-          </div>
-      </nav>
-      </header>
-
-      <section class="d-flex flex-column justify-content-center align-items-center p-m">
-        <div class="text-center text-white">
-            <h1 class="">Department of Physical Medicine</h1>
-            <div class="col-lg-6 my-2 py-5 mx-auto">
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium obcaecati dolorum rerum blanditiis mollitia, reiciendis eius, aut cupiditate officia, exercitationem voluptatem sint totam quos libero voluptatibus consequuntur natus suscipit.</p>
-                <a class="my-5" href="#">Our Doctors</a> 
-            </div>
-        </div>
-    </section>
-
-    
-
     <section>
-       
-        <div class="px-4 py-5 my-5 text-center">
-            <h1 class="">OUR DOCTORS</h1>
-            <div class="col-lg-6 mx-auto">
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit laudantium obcaecati dolorum rerum blanditiis mollitia, reiciendis eius, aut cupiditate officia, exercitationem voluptatem sint totam quos libero voluptatibus consequuntur natus suscipit.</p>
-              </div>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><img class="ms-2" src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ms-2">Hospice</span></a>
+    
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link smoothScroll">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="Department.html" class="nav-link smoothScroll">Departments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="doctor.html" class="nav-link">Doctors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="location3.html" class="nav-link active">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div> 
+        </nav>
+        </header>
     </section>
 
-    
 
-    <section class="d-doctors">
+    <section class="mar-20">
         <div class="container">
-            <div class="row row-cols-1 row-cols-md-2 g-4" id="doctors-card"></div>  
+            <div class="row g-5 d-flex justify-content-center align-items-center">
+                <div class="col-md-6 col-12">
+                    <img src="images/miles-burke-idhx-MOCDSk-unsplash.jpg" class="w-100 rounded" alt="">
+                </div>
+                <div class="col-md-6 col-12 text-center">
+                    <h1>Contact Us</h1>
+                    <hr class="w-50 mx-auto mb-5">
+                    <h2>8353 Hamilton Ave</h2>
+                    <h3> CA , USA</h3>
+                    <button class="btn btn-success">Learn More</button>
+                    <button class="btn btn-warning">Departments</button>
+                </div>
+            </div>
         </div>
     </section>
+
+    <section class="mar">
+        <h1 class="text-center py-5 my-5">Departments Locations</h1>
+        <div class="container">
+            <div class="row d-location" id="row"></div>
+        </div>
+    </section>
+
 
     <section>
         <footer class="site-footer" data-aos="fade-up">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-5 mx-lg-auto col-md-8 col-10 text-center">
-                        <h1 class="hed" data-aos="fade-up" data-aos-delay="100"><img src="./images/pix1.png" width="50px" height="50px">Doctor's Care</h1>
+                        <h1 class="hed" data-aos="fade-up" data-aos-delay="100"><img src="https://cdn.pixabay.com/photo/2016/09/16/19/15/drug-bottle-1674888__480.png" class="me-2" width="50px" height="50px">Hospice</h1>
                       </div>
                       <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="200">
                         <h4 class="my-4  cnt">Contact Info</h4>
@@ -102,13 +122,13 @@
                     <div class="col-lg-3 col-md-6 col-12 text-white">
                         <p>
                             <ul class="social-icon">
-                                <li data-aos="fade-right" data-aos-delay="300">
+                                <li data-aos="fade-right mb-2" data-aos-delay="300">
                                     <span class="text-primary"><a href="" class="fab fa-facebook fa-2x"></a></span>
                                 </li>
-                                <li data-aos="fade-up" data-aos-delay="350">
+                                <li data-aos="fade-up mb-2" data-aos-delay="350">
                                     <span class="text-danger"><a href="" class="fab fa-github fa-2x"></a></span>
                                 </li>
-                                <li data-aos="fade-left" data-aos-delay="400"><span class="text-success"><a href="" class="fab fa-linkedin-in fa-2x"></a></span></li>
+                                <li data-aos="fade-left mb-2" data-aos-delay="400"><span class="text-success"><a href="" class="fab fa-linkedin-in fa-2x"></a></span></li>
                             </ul>
                         </p>
                 </div>
@@ -117,71 +137,72 @@
         </footer>
     </section>
 
+
     <script>
-
-        const getDoctors = () =>
+        const showLocation = () =>
         {
-            fetch("Funct13.php")
-            .then(function(response)
-            {
-                return response.json();
-            })
-            .then(function(data)
-            {
-            console.log(data);
-                displayData(data);
-            });
+            fetch("Funct27.php")
+            .then(res => res.json())
+            .then(data => tableMaker(data));
         }
-        
 
-        
-    getDoctors();
-        
-    
-        const displayData = (doctors) =>
+        showLocation();
+
+
+        const tableMaker = (data) =>
         {
-            let row = document.getElementById("doctors-card");
-            
-            let i = 0;
-            doctors.forEach(doctor => 
+            let row = document.getElementById("row");
+            let col = document.createElement("div");
+            col.classList.add("col-md-6");
+            col.classList.add("col-12");
+            col.classList.add("mx-auto");
+
+            let table = document.createElement("table");
+            table.classList.add("table");
+            table.classList.add("table-bordered");
+            table.classList.add("border-white");
+            table.classList.add("table-striped");
+            table.classList.add("text-center");
+            table.classList.add("p-5");
+            const thead = `
+            <thead class="table">
+                <tr>
+                    <th>Department Name</th>
+                    <th>Department Location</th>
+
+                </tr>
+            </thead>
+            `
+            table.innerHTML = thead;
+
+            const tBody = document.createElement("tbody");
+            data.forEach(data => 
             {
-                console.log(doctor);
-                const { Doctor_Name , Doctor_Education } = doctor;
-                const cardArticle = document.createElement("article");
-                const div = cardMaker(Doctor_Name  , i);
-                cardArticle.innerHTML = `${div}`;
-                i++;
-    
-                row.append(cardArticle);
+                const tr = document.createElement("tr");
+                
+                const { Department_Name , Department_Location } = data;
+                const td = rowMaker(Department_Name , Department_Location);
+                tr.innerHTML = td; 
+                tBody.appendChild(tr);
                 
             });
-            
+            table.appendChild(tBody); 
+            col.appendChild(table);
+            row.append(col);
             
         }
-        
-        const cardMaker = (name ,  i) =>
+
+        const rowMaker = (d_name , d_location) =>
         {
-        
-            let img =[]
-            let path = "medicine" + (i + 1) + ".html";
-        
-            const card = `
-            
-                        <div class="col">
-                          <div class="card h-100">
-                            <img src="${img[i]}" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h2 class="card-title text-center">${name}</h2>
-                              <h4>${education}</h4>
-                                
-                              <a href="${path}" class="btn btn-primary">View Website</a>
-                            </div>
-                          </div>
-                        </div>
-                        `
-             return card;           
+            td = `
+                    <td>${d_name}</td>
+                    <td>${d_location}</td>
+                `
+
+                return td;
         }
+
+
     </script>
-    
 </body>
 </html>

@@ -12,7 +12,75 @@
     </head>
     <body>
 
-        
+        <header class="text-white">
+            <nav class="navbar navbar-expand-lg fixed-top">
+              <div class="container">
+                  <a class="navbar-brand" href="index.html"><img  src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ml-2">Hospice</span></a>
+      
+              </div>
+          </nav>
+          </header>
+
+
+          
+
+          <section class="mar-20">
+            <div class="container">
+                <div class="row g-5 d-flex justify-content-center align-items-center">
+                    <div class="col-md-6 col-2">
+                        <h1 class="">Register Patients</h1>
+                        <p class="lead">Register old and new patients here</p>
+                        <button class="btn btn-primary">Learn More</button>
+                        <button class="btn btn-warning">Contact Us</button>
+                    </div>
+                    <div class="col-md-6 col-2">
+                        <img class="w-100" src="images/austin-distel-gUIJ0YszPig-unsplash.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+          </section>
+          
+          
+          <section class="mar-20">
+              <h1 class="text-center mb-5">Guidelines</h1>
+              <div class="container">
+                <div class="row row-cols-1 row-cols-md-2 g-5">
+                    <div class="col mb-5">
+                        
+                        <div class="card guide-card h-100 border-0 shadow-lg p-5">
+                            <div class="card-body">
+                               <h2 class="text-center text-white mb-3">For New Patients</h2>
+                               <hr class="w-50">
+                               <ol class=" mt-5">
+                                   <li>Give your name.</li>
+                                   <li>Give your Age.</li>
+                                   <li>Give your gender.</li>
+                                   <li>Give your mobile-number.</li>
+                                   <li>Choose your doctor and appointment Days very carefully.</li>
+                                   <li>Please Bring your prescription in your next visits.</li>
+                               </ol> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-5">
+                        
+                        <div class="card guide-card h-100 border-0 shadow-lg p-5">
+                            <div class="card-body">
+                               <h2 class="text-center text-white mb-3">For Old Patients</h2>
+                               <hr class="w-50">
+                               <ol class="mt-5">
+                                   <li>Please come with your previous prescription </li>
+                                   <li>Provide your patirnt_id</li>
+                                   <li>Choose your doctor and appintment Days very carefully</li>
+                               </ol> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </section>
+
+
         <section class="mt-10 mb-10" id="onen">
 
             <h1 class="title text-center">Register a New Patient </h1>
@@ -36,7 +104,7 @@
                             <input type="text" class ="input-text" name ="mobile" placeholder="Mobile Number" id="mobile" required/>
                         </div>                        
                         <div class="form-field col-lg-6">
-                            <select class="form-select form-select-lg mb-3 input-text" onchange="selectHandler1()" id="doctor" >
+                            <select class="form-select form-select-lg mb-3 input-text" onchange="selectHandler1()" id="doctor" id="doctor" >
                                 <option selected>Choose your Doctor</option>
                                 
                               </select>
@@ -57,21 +125,84 @@
             </div>
         </section>
 
+        <section class="mb-5" id="new-p">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-2 col-6 text-center bg-warning p-5 mx-auto">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-12">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8"></div>
+                </div>
+            </div>
+        </section>
+
 
         <section class="mt-10 mb-10 text-center" id="onen">
-            <h1 class="title text-center">Cheack your serial</h1>
+            <h1 class="title text-center">Register An Old Patients </h1>
             <div class="container">
                 <div class="row reg-form mx-auto text-center">
                         <div class="form-field mx-auto col-lg-6">
-                            <input type="text" class ="input-text" name ="ID" placeholder="Patient's Id" id="Name" required/>
+                            <input type="text" class ="input-text" name ="ID" placeholder="Patient's Id" id="id" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <select class="form-select form-select-lg mb-3 input-text" onchange="selectHandler2()" id="doctor-old" >
+                                <option selected>Choose your Doctor</option>
+                                
+                              </select>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <select class="form-select form-select-lg mb-3 input-text" onchange="" id="date-old" aria-label=".form-select-lg example">
+                                <option selected id="baseOption">Choose your Suitable Date</option>
+                                
+                              </select>
                         </div>
                         <div class="form-field mx-auto text-white col-lg-12">
-                            <button class="btn" onclick="Reg();">Cheack In</button>
+                            <button class="btn" onclick="reg()">Cheack In</button>
                          </div>
                          
                 </div>
             </div>
         </section>
+
+
+        <section class="mb-5" id="old-p">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2 col-6 text-center bg-warning  mx-auto p-5">
+                        <div class="lds-ring">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
         
     </body>
     <script>
@@ -84,6 +215,45 @@
 
             sendingData(docId);
 
+        }
+
+        const selectHandler2 = () =>
+        {
+            const docId = document.getElementById("doctor-old").value;  
+
+
+            sendingData2(docId);
+
+        }
+
+
+        
+        const sendingData2 = (json) =>
+        {
+            let headers = {
+                "Content-Type": "application/json"
+            }
+
+            fetch("Funct17.php" , {method : "POST" , headers :headers , body: JSON.stringify(json)})
+            .then(res => res.json())
+            .then(data => retriveDate2(data))
+        }
+
+        const retriveDate2 = (dates) =>
+        {
+            const select = document.getElementById("date-old");
+            const baseOption = document.getElementById("baseOption");
+
+            select.innerHTML = "";
+
+            select.append(baseOption);
+
+            dates.forEach(date => {
+                const { Available_Day } = date;
+                const option = optionMaker2(Available_Day);
+                select.append(option);
+
+            });
         }
 
 
@@ -125,6 +295,27 @@
         }
 
 
+        const doctor2 =() =>
+        {
+            fetch('Funct16.php')
+            .then(res => res.json())
+            .then(data => selectDoctor2(data))
+        }
+        
+
+        const selectDoctor2 = (data) =>
+        {
+            const select = document.getElementById("doctor-old");
+
+            data.forEach(doctor =>{
+                const { Doctor_Name , Department_Name , Doctor_id } = doctor;
+                const option = optionMaker1(Doctor_Name , Department_Name , Doctor_id);
+                select.appendChild(option);
+            });
+        }
+
+        doctor2()
+
 
         const doctor =() =>
         {
@@ -132,18 +323,21 @@
             .then(res => res.json())
             .then(data => selectDoctor(data))
         }
+
         
-        doctor();
+        
         const selectDoctor = (data) =>
         {
             const select = document.getElementById("doctor");
 
             data.forEach(doctor =>{
                 const { Doctor_Name , Department_Name , Doctor_id } = doctor;
-                const option = optionMaker1(Doctor_Name , Department_Name , Doctor_id)
-                select.append(option);
+                const option = optionMaker1(Doctor_Name , Department_Name , Doctor_id);
+                select.appendChild(option);
             });
         }
+
+
 
         const optionMaker1 = (name , department , id) =>
         {
@@ -155,5 +349,7 @@
 
             return option;
         }
+
+        doctor();
     </script>
 </html>

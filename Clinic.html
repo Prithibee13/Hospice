@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="Styles.css">
+        
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <title>Clinic Status</title>
+    </head>
+    <body>
+        <header class="text-white">
+            <nav class="navbar navbar-expand-lg fixed-top">
+              <div class="container">
+                  <a class="navbar-brand" href="index.html"><img  src="https://images.unsplash.com/photo-1616426745332-be27ed09534b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTA2fHxkb2N0b3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60" width="50px" height="50px"><span class="ml-2">Hospice</span></a>
+      
+              </div>
+          </nav>
+          </header>
+
+          
+
+          <section class="mar-20">
+            <div class="container">
+                <div class="row g-5 d-flex justify-content-center align-items-center">
+                    <div class="col-md-6 col-12">
+                        <h1 class="py-3 my-3" >HOSPICE</h1>
+                        <button class="btn btn-primary">Learn More</button>
+                        <button class="btn btn-warning">Contact Us</button>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <img class = "w-100 rounded" src="https://cdn.pixabay.com/photo/2017/01/29/21/16/nurse-2019420_1280.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+          </section>
+
+
+          <section>
+            <div class="container">
+                <div class="row g-5 ">
+                    <div class="col-md-4 col-12 shadow-lg p-5">
+                        <h2 id="de-head"></h2>
+
+                        <canvas id="de-canvas"></canvas>
+
+                    </div>
+
+                    
+                    <div class="col-md-4 col-12 shadow-lg  p-5">
+                        <h2 id="do-head"></h2>
+
+                        <canvas id="do-canvas"></canvas>
+                    </div>
+                    <div class="col-md-4 col-12 p-5 shadow-lg">
+                        <h2 id="p-head"></h2>
+
+                        <canvas id="p-canvas"></canvas>
+                    </div>
+                </div>
+            </div>
+          </section>
+
+
+        <section class="mar-20">
+            <h3 class="text-center py-5 my-5">
+                Upcoming features
+            </h3>  
+
+            <div class="container shadow-lg p-5">
+                <h1 class="title text-center py-5 my-3">ADD A New Doctor</h1>
+                <div class="row reg-form text-center">
+
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text" placeholder="Doctor Name"  id="date" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="Doctor-email" id="capacity" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="Department Name" id="time" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="Doctor_id" id="capacity" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="Department_id" id="capacity" required/>
+                        </div>
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="DOctor Mobile Number" id="capacity" required/>
+                        </div>
+                        
+                        <div class="form-field col-lg-6">
+                            <input type="text" class ="input-text"  placeholder="Department_location" id="capacity" required/>
+                        </div>
+                        <div class="form-field mx-auto text-white col-lg-12">
+                            <button class="" id="schedule-btn" onclick="Scm2();">Set Date</button>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section  class="mar-20">
+            <div class="container shadow-lg p-5">
+                <h1 class="title text-center py-5 my-3">Delete A Doctor</h1>
+                <div class="row reg-form mx-auto text-center">
+                        <div class="form-field col-lg-6">
+                            <select class="form-select form-select-lg mb-3 input-text" id = "doc_id" aria-label=".form-select-lg example">
+                                <option selected>Doctor ID</option>
+                                
+                                
+                            </select>
+                        </div>
+                        <div class="form-field mx-auto text-white col-lg-12">
+                            <button class="" id="schedule-btn" onclick="Scm2();">Set Date</button>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+        <script>
+            /*  */
+            const fetchData = () =>
+            {
+                fetch("Funct14.php")
+                .then(function(response)
+                    {
+                        return response.json();
+                    })
+                .then(function(data)
+                    {
+                        displayData(data)
+                    })
+            }
+
+            fetchData();
+
+
+            const displayData = (doctors_id) =>
+            {
+                const select = document.getElementById("doc_id"); 
+
+                
+                
+                doctors_id.forEach(id =>
+                {
+                    const selectDiv = document.createElement("div");
+                    const { Doctor_id }  = id 
+                    const options = optionMaker(Doctor_id);
+                    select.append(options);
+                });
+            }
+
+
+            const optionMaker = (id) =>
+            {
+                const option  = document.createElement("option");
+
+                option.setAttribute("value" , id);
+
+                option.innerText = `Doctor id -${id}`;
+
+                return option;
+            }
+
+
+            const totalPatient =() =>
+            {
+                fetch("Funct15.php")
+                .then(res => res.json())
+                .then(data => doughnutMaker(data , "p" , "#FFF56D" , "Patient"))
+            }
+
+            const totalDepartment = () =>
+            {
+                
+                fetch("Funct30.php")
+                .then(res => res.json())
+                .then(data => doughnutMaker(data , "de" , "#172774" , "Department"))
+            }
+
+            const totalDoctor = () =>
+            {
+                
+                fetch("Funct29.php")
+                .then(res => res.json())
+                .then(data => doughnutMaker(data , "do" , "#753188" , "Doctor"))
+            }
+
+        const doughnutMaker = (data , type , color , matter) =>
+        {
+            
+            const { Number } = data[0];
+            const total = parseInt(Number)
+            const id = type + "-canvas";
+            const head = type + "-head";
+            console.log(head);
+            document.getElementById(head).innerText = "Total "  +  matter + " : "   + total;
+            const ctx = document.getElementById(id).getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Total'],
+                    datasets: [{
+                        label: '# of Votes',
+                        data: [total],
+                        backgroundColor: [
+                            color
+                        ],
+                        borderColor: [
+                            color
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {}
+            });
+        }
+
+
+
+            totalPatient();
+            totalDoctor();
+            totalDepartment();
+
+        </script>
+
+        <script src="Schedule.js"></script>
+    </body>
+</html>
